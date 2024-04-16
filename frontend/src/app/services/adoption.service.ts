@@ -20,7 +20,7 @@ export class AdoptionService {
     }
 //  24 * 60 * 60 * 1000;
     startScheduledApiCalls(): Observable<any> {
-        const intervalTime =1 * 60 * 60 * 1000; // 1 hour in milliseconds
+        const intervalTime = 1 * 30 * 24 * 60 * 60 * 1000; 
         return interval(intervalTime).pipe(
           switchMap(() => this.getDogsFromApi())
         );

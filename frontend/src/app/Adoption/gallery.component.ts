@@ -147,7 +147,8 @@ export class GalleryComponent {
     this.adoptionSvc.deleteAdoptedPet(petId).then((result)=>{
       // console.info(result)
       alert(result.deleted)
-      this.getAllDogs(this.currentPage, this.pageSize)
+      // this.getAllDogs(this.currentPage, this.pageSize)
+      location.reload()
     })
     .catch((err)=>{
       alert("Unsuccessful delete")
