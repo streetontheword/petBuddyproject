@@ -42,13 +42,13 @@ export class ForumComponent implements OnInit {
     this.threadInStoreSub = this.store.getAllThreads.subscribe((result) => {
       this.threadInStore$ = result
 
-      console.info("contents from store", this.threadInStore$)
+      // console.info("contents from store", this.threadInStore$)
 
     })
 
 
 
-    console.info(this.isAdmin)
+    // console.info(this.isAdmin)
     //this.getThreads()
 
   }
@@ -74,10 +74,10 @@ export class ForumComponent implements OnInit {
 
   deletePost(threadId: string) {
     threadId = this.activatedRoute.snapshot.params['threadId'];
-    console.info(threadId)
+
     this.deletedThread$ = this.forumSvc.deleteComment(threadId).subscribe({
       next: ((result) => {
-        console.info(result)
+   
       }),
       error: ((err) => {
         console.info(err)
@@ -97,10 +97,10 @@ export class ForumComponent implements OnInit {
 
   processSearch() {
     let search:string = this.searchBar.value["search"]
-    console.info(search)
+
     this.sub$ = this.store.getMatchingThreadsByTitle(search).subscribe({
       next: (result)=>{
-        console.info("here is the result>>>>>", result)
+ 
         this.threadInStore$ =result
       }
     })
@@ -118,7 +118,7 @@ export class ForumComponent implements OnInit {
     this.threadInStoreSub = this.store.getAllThreads.subscribe((result) => {
       this.threadInStore$ = result
 
-      console.info("contents from store", this.threadInStore$)
+
 
     })
   }

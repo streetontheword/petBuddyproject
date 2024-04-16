@@ -14,7 +14,6 @@
     <button mat-button *ngIf="!isAdmin" [routerLink]="['/contact']">Contact</button>
     
     <button mat-button *ngIf="isAdmin" [routerLink]="['/dashboard']">Dashboard</button>
-    <button mat-button *ngIf="isAdmin" [routerLink]="['/appointments']">Appointment</button>
     <button mat-button *ngIf="isAdmin" [routerLink]="['/calendar']">Calendar</button>
 
     <button mat-button [matMenuTriggerFor]="menu" *ngIf="!isAdmin">My Account</button>

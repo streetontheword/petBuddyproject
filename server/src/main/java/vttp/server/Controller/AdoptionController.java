@@ -50,8 +50,7 @@ public class AdoptionController {
         // type = "dog";
         // List<AdoptedDogProfile> dog = adoptedApiSvc.getAllDogs(accessToken, type);
         adoptedApiSvc.saveToMongo(dog);
-        System.out.println("did we get here?");
-        System.out.println(dog);
+    
 
         return ResponseEntity.ok().body(dog);
 
@@ -202,7 +201,7 @@ public class AdoptionController {
         String secondaryBreed = jsonObject.getString("secondaryBreed", "null");
         JsonArray jsonArray = jsonObject.getJsonArray("url");
         String url = jsonArray.getString(0);
-        System.out.println(url);
+        // System.out.println(url);
 
         favoriteDog.setGender(gender);
         favoriteDog.setName(name);
@@ -210,7 +209,7 @@ public class AdoptionController {
         favoriteDog.setPrimaryBreed(primaryBreed);
         favoriteDog.setSecondaryBreed(secondaryBreed);
         favoriteDog.setUrl(url);
-        System.out.println(favoriteDog);
+        // System.out.println(favoriteDog);
 
         // save toSQL
         if (adoptedApiSvc.favoriteDog(favoriteDog, userId)) {
@@ -225,7 +224,6 @@ public class AdoptionController {
             return ResponseEntity.ok().body(fail);
         }
 
-        // System.out.println(id + name + gender + breed);
     }
 
     @GetMapping(path = "/{userId}/favorites")
@@ -238,7 +236,7 @@ public class AdoptionController {
 
     @PostMapping(path = "/{userId}/delete")
     public ResponseEntity<String> deleteSaved(@RequestBody int petId, @PathVariable String userId) {
-        System.out.println(petId);
+        // System.out.println(petId);
 
         try {
             String resp = adoptedApiSvc.deletedSaved(petId, userId);
@@ -255,9 +253,7 @@ public class AdoptionController {
     @PostMapping(path = "/{userId}/sendinquiry")
     public ResponseEntity<String> sendInquiry(@PathVariable("userId") String userId, @RequestBody String jsonResp)
             throws ParseException {
-        System.out.println("received" + jsonResp);
 
-        System.out.println(userId);
         Inquiry inquiry = new Inquiry();
         JsonReader jsonReader = Json.createReader(new StringReader(jsonResp));
         JsonObject jsonObject = jsonReader.readObject();
@@ -289,7 +285,7 @@ public class AdoptionController {
 
         try {
             Boolean result = adoptedApiSvc.makeInquiry(inquiry, userId);
-            System.out.println(result);
+
             return ResponseEntity.ok().body(result.toString());
 
         } catch (Exception e) {
@@ -302,7 +298,7 @@ public class AdoptionController {
 
     @GetMapping(path = "/getinquiry")
     public ResponseEntity<List<Inquiry>> getAllEnquries() {
-        System.out.println(" i am here ");
+
         List<Inquiry> listOfInquiry = new ArrayList<>();
         try {
             listOfInquiry = adoptedApiSvc.getAllInquiry();
@@ -333,11 +329,11 @@ public class AdoptionController {
 
         try {
             String resp = adoptedApiSvc.acceptInquiry(inquiryId, userId);
-            System.out.println(resp);
+
             JsonObject jsonObj = Json.createObjectBuilder().add("success", resp).build();
             return ResponseEntity.ok().body(jsonObj.toString());
         } catch (Exception e) {
-      
+
             return ResponseEntity.status(HttpStatus.SC_INTERNAL_SERVER_ERROR).body("Failed to accept the inquiry");
         }
 
@@ -348,23 +344,22 @@ public class AdoptionController {
 
         try {
             String resp = adoptedApiSvc.declineInquiry(inquiryId, userId);
-            System.out.println(resp);
+
             JsonObject jsonObj = Json.createObjectBuilder().add("success", resp).build();
             return ResponseEntity.ok().body(jsonObj.toString());
         } catch (Exception e) {
-    
+
             return ResponseEntity.status(HttpStatus.SC_INTERNAL_SERVER_ERROR).body("Failed to accept the inquiry");
         }
 
     }
 
     @GetMapping(path = "/getIndividual/{inquiryId}")
-    public ResponseEntity<Inquiry> getIndividualAppointment(@PathVariable("inquiryId") String inquiryId) throws ParseException {
-        System.out.println("received from frontend" + inquiryId);
+    public ResponseEntity<Inquiry> getIndividualAppointment(@PathVariable("inquiryId") String inquiryId)
+            throws ParseException {
 
-            Inquiry inquiry = adoptedApiSvc.getConfirmedAppointment(inquiryId);
-            return ResponseEntity.ok().body(inquiry);
-
+        Inquiry inquiry = adoptedApiSvc.getConfirmedAppointment(inquiryId);
+        return ResponseEntity.ok().body(inquiry);
 
     }
 

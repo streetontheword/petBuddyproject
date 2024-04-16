@@ -46,15 +46,7 @@ public class PetController {
 
         Pet pet = new Pet();
         pet.setName(name);
-        // DateFormat dateFormat = new SimpleDateFormat("EEE MMM dd yyyy HH:mm:ss
-        // 'GMT'Z", java.util.Locale.ENGLISH);
-        // Date date = dateFormat.parse(dateOfBirth);
-        // SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-
-        // SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-        // Date date = formatter.parse(dateOfBirth);
-        // System.out.println(date);
+      
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         Date dob = formatter.parse(dateOfBirth);
@@ -62,17 +54,6 @@ public class PetController {
         pet.setDateOfBirth(dob);
         pet.setDateOfLastVaccination(dateOfVac);
 
-        // Date dob = sdf.parse("pasred date" + dateOfBirth);
-        // System.out.println(dob);
-        // SimpleDateFormat formatter = new SimpleDateFormat("MM-DD-YYYY");
-        // Date date = dateFormat.parse(dateOfBirth);
-
-        // Date date = formatter.parse(dateOfBirth);
-        // System.out.println(date);
-        // pet.setDateOfBirth(date);
-
-        // Date vacDate = dateFormat.parse(dateOfLastVaccination);
-        // pet.setDateOfLastVaccination(vacDate);
         pet.setMicrochipNumber(microchipNumber);
         pet.setGender(gender);
         pet.setComments(comments);
@@ -92,7 +73,7 @@ public class PetController {
     @PostMapping(path = "/{userId}/updateDetails")
     public ResponseEntity<String> updateFormField(@RequestBody String resp) throws ParseException {
 
-        System.out.println("received from front end update" + resp);
+       
 
         JsonReader jsonReader = Json.createReader(new StringReader(resp));
         JsonObject jsonObject = jsonReader.readObject();
@@ -104,7 +85,7 @@ public class PetController {
         // SimpleDateFormat formatter = new SimpleDateFormat("MM-DD-YYYY");
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = inputFormat.parse(dateOfBirth);
-        System.out.println(date);
+      
         String dateOfLastVaccination = jsonObject.getString("dateOfVaccination");
         Date dateOfVac = inputFormat.parse(dateOfLastVaccination);
         String gender = jsonObject.getString("gender");
@@ -148,16 +129,7 @@ public class PetController {
     public ResponseEntity<List<Pet>> getPets(@PathVariable("userId") String userId) {
 
         List<Pet> listOfPets = petSvc.retreievePet(userId);
-        // System.out.println("IN CONTROLLER>>>>>"+listOfPets);
-        // JsonArrayBuilder jsonArray = Json.createArrayBuilder();
-        // for(Pet p : listOfPets){
-        // JsonObject petJson = Json.createObjectBuilder()
-        // .add("name", p.getName())
-
-        // .add("comment", p.getComments())
-        // .build();
-        // jsonArray.add(petJson);
-        // }
+       
 
         return ResponseEntity.ok().body(listOfPets);
 
@@ -175,8 +147,7 @@ public class PetController {
     @PostMapping(path = "/{petId}/deletePet")
     @CrossOrigin
     public ResponseEntity<String> deleteIndividualPet(@RequestBody String userId, @PathVariable int petId) {
-        System.out.println(userId);
-        System.out.println(petId);
+      
         try {
             String resp = petSvc.deleteIndividual(userId, petId);
             JsonObject jsonObj = Json.createObjectBuilder().add("success", resp).build();

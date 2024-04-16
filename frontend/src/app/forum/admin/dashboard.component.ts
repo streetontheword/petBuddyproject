@@ -66,13 +66,13 @@ export class DashboardComponent implements OnInit {
     };
 
 
-    console.info("array>>", this.confirmedAppointments)
+    // console.info("array>>", this.confirmedAppointments)
 
     this.adoptionSvc.acceptInquiry(this.inquiryId, this.userId).then((result) => {
       
       this.confirmation$ = this.adoptionSvc.sendEmailConfirmation(this.firstName, this.email, this.appointmentDate).subscribe({
         next: ((response) => {
-          console.info("Confirmaton email sent successfully", response)
+          // console.info("Confirmaton email sent successfully", response)
           alert(response.success)
           this.inquiry.splice(index, 1)
         }),
@@ -95,11 +95,11 @@ export class DashboardComponent implements OnInit {
     this.appointmentDate = inquiry.intended_visit_date
 
     this.adoptionSvc.declineInquiry(this.inquiryId, this.userId).then((result)=>{
-        console.info("declined", result)
+        // console.info("declined", result)
 
         this.confirmation$ = this.adoptionSvc.sendEmailDeclination(this.firstName, this.email, this.appointmentDate).subscribe({
           next: ((response) => {
-            console.info("Declination email sent successfully", response)
+            // console.info("Declination email sent successfully", response)
             alert(response.success)
             this.getAllInquries()
             

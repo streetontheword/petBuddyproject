@@ -56,7 +56,7 @@ public class PetRepository {
 
         String key = "images/%s".formatted(imageId);
 
-        System.out.println("ID from REPO>>>: " + imageId);
+        // System.out.println("ID from REPO>>>: " + imageId);
 
         PutObjectRequest putReq = new PutObjectRequest(
                 "streetontheword" // bucket name
@@ -105,7 +105,7 @@ public class PetRepository {
 
         String key = "images/%s".formatted(imageId);
 
-        System.out.println("ID from REPO>>>: " + imageId);
+        // System.out.println("ID from REPO>>>: " + imageId);
 
         PutObjectRequest putReq = new PutObjectRequest(
                 "streetontheword" // bucket name
@@ -117,7 +117,7 @@ public class PetRepository {
         // upload to s3 bucked
         PutObjectResult result = s3.putObject(putReq);
         String url = s3.getUrl("streetontheword", key).toExternalForm();
-        System.out.println("In repo>>> URL: " + url);
+        // System.out.println("In repo>>> URL: " + url);
 
         return url;
 
@@ -157,8 +157,7 @@ public class PetRepository {
             pet.setUserId(rs.getString("userId"));
             pet.setPetId(rs.getInt("petId"));
             listOfPets.add(pet);
-            System.out.println("in repo>>>>" + listOfPets);
-            System.out.println("Pet>>>>>>>" + pet);
+       
         }
 
         return listOfPets;

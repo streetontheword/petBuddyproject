@@ -9,6 +9,6 @@ export class SuccessComponent implements OnInit{
 
 
   ngOnInit(): void {
-      console.info("oninit")
+      // console.info("oninit")
   }
 }

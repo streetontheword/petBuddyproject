@@ -54,8 +54,8 @@ public class TokenService {
 
     public String getUserIdFromToken(String token){
         Jwt jwt = jwtDecode.decode(token);
-         System.out.println("roles>>>" + jwt.getClaimAsString("roles"));
-        System.out.println("subject>>>>>"+jwt.getSubject());
+        //  System.out.println("roles>>>" + jwt.getClaimAsString("roles"));
+        // System.out.println("subject>>>>>"+jwt.getSubject());
         return jwt.getSubject();
     }
 

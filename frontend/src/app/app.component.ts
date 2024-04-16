@@ -44,13 +44,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.localStorage.getToken()
     this.username = this.localStorage.getItem("username")
     this.isAdminString = this.localStorage.getItem("role")
-    console.log("admin strng",this.isAdminString)
+    // console.log("admin strng",this.isAdminString)
     if(this.isAdminString== "admin"){
-      console.log("true")
+   
       this.isAdmin = true
     }
     else{
-      console.log('false')
+ 
       this.isAdmin = false
     }
   }
@@ -58,9 +58,9 @@ export class AppComponent implements OnInit, OnDestroy {
   getAdmin() {
     this.authService.isAdminSubject.subscribe({
       next: (response) => {
-        console.info("what response is this", response)
+        // console.info("what response is this", response)
         this.isAdmin = response
-        console.info("boolean", this.isAdmin)
+        // console.info("boolean", this.isAdmin)
         if (this.isAdmin === "true") {
           this.localStorage.setItem("isAdmin", "true")
           this.setAdminToTrue()
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getUsername() {
     this.username = this.localStorage.getItem("username")
-    console.info("username>>>>", this.username)
+  
 
   }
 

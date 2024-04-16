@@ -47,7 +47,7 @@ public class NotificationService {
 
         Date timestamp = new Date();
         Notification notification = new Notification(id, username, text, read, timestamp);
-        System.out.println(notification);
+        // System.out.println(notification);
         notifRepo.addNewNotification(notification);
 
         Integer count = getCountOfUnreadMessages(username);

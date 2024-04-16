@@ -23,12 +23,11 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
       // this.logout()
-      console.info("onint")
+      // console.info("onint")
       this.getAllDogs()
   
   }
   process(){
-    console.info("this button is pressed")
     this.router.navigate(['/mypets'])
   }
 
@@ -36,7 +35,7 @@ export class HomepageComponent implements OnInit {
   getAllDogs(){
     this.adoptionSvc.startScheduledApiCalls().subscribe({
       next: (result) =>{
-          console.info("calling api after 1 hr", result)
+          // console.info("calling api after 1 hr", result)
       },
     })
   }

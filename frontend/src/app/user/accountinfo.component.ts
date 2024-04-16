@@ -24,7 +24,7 @@ export class AccountinfoComponent implements OnInit {
     this.userid = this.localStorage.getItem("userid")
     this.username = this.localStorage.getItem("username")
 
-    console.info(this.userid)
+    // console.info(this.userid)
     this.getUserInfo(this.userid)
     this.updateForm = this.createForm()
 
@@ -62,14 +62,14 @@ export class AccountinfoComponent implements OnInit {
 
 
   openDialog(): void {
-    console.info("dialog pressed")
+
 
     const dialogRef = this.dialog.open(PhotoComponent, {
 
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
       this.getUserInfo(this.userid)
 
     });
@@ -91,14 +91,11 @@ export class AccountinfoComponent implements OnInit {
 
   cancelEdit(): void {
     this.editMode = false;
-    // Reset form to initial values
-    // this.initForm();
+
   }
 
   saveChanges(): void {
-    // Handle saving changes to backend
-    // console.log(this.accountForm.value);
-    // Reset edit mode
+
     this.editMode = false;
   }
 }

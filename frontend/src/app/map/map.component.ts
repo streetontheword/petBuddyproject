@@ -75,8 +75,6 @@ des!: PlaceSearchResult
 
 ngOnInit(): void {
   
-  console.info("in ONINIT")
- 
     // Get user's current location
     this.getCurrentLocation()
    
@@ -91,7 +89,7 @@ this.autocompletedestination = new google.maps.places.Autocomplete(this.destinat
 
 this.autocompleteorigin.addListener('place_changed', ()=>{
   const place = this.autocompleteorigin?.getPlace()
-  console.info(place)
+  // console.info(place)
 
   let originResult: PlaceSearchResult = {
     address : this.inputField.nativeElement.value, 
@@ -101,17 +99,17 @@ this.autocompleteorigin.addListener('place_changed', ()=>{
 
   this.og =originResult
   
- console.info("origin>>>",originResult)
+//  console.info("origin>>>",originResult)
 
   this.originPlaceId = place?.place_id
-  console.info(this.originPlaceId)
+  // console.info(this.originPlaceId)
   // console.info("this is the origin>>>", place?.place_id)
 })
 
 this.autocompletedestination.addListener('place_changed', ()=>{
   const place = this.autocompletedestination?.getPlace()
   this.destinationPlaceId = place?.place_id
-  console.info(this.destinationPlaceId)
+  // console.info(this.destinationPlaceId)
   // console.info("this is the destination>>>", place?.place_id)
 
   let destinationResult: PlaceSearchResult = {
@@ -121,7 +119,7 @@ this.autocompletedestination.addListener('place_changed', ()=>{
   }
   this.des = destinationResult
 
- console.info("destination",destinationResult)
+//  console.info("destination",destinationResult)
 })
 
 
@@ -193,19 +191,19 @@ getDirections() {
   if (this.og && this.og.location && this.des && this.des.location) {
     const from = this.og.location;
     const to = this.des.location;
-    console.log("Getting directions from", from, "to", to);
+    // console.log("Getting directions from", from, "to", to);
 
     const request: google.maps.DirectionsRequest = {
       origin: from,
       destination: to,
       travelMode: google.maps.TravelMode.DRIVING
     };
-    console.info("REQUEST>>", request);
+    // console.info("REQUEST>>", request);
 
     this.mapDirectionSvc.route(request).pipe(
       map(res => res.result)
     ).subscribe((result) => {
-      console.info(result);
+      // console.info(result);
       this.directionsResult = result;
     });
   } else {

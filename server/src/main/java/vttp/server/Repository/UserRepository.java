@@ -51,12 +51,12 @@ public class UserRepository {
 
     public User createUser(User user) {
 
-        System.out.println("in repo");
+        // System.out.println("in repo");
 
         try {
             template.update(SQL_INSERT_USER, user.getUserId(), user.getEmail(), user.getFirstName(), user.getLastName(),
                     user.getUserName(), user.getPassword(), "user", user.getUrl());
-            System.out.println("successfull saved");
+      
             User savedUser = new User();
             savedUser.setEmail(user.getEmail());
             savedUser.setUserId(user.getUserId());
@@ -65,7 +65,7 @@ public class UserRepository {
             savedUser.setPassword(user.getPassword());
             savedUser.setRole("user");
             savedUser.setUrl(user.getUrl());
-            System.out.println("in repo");
+            
 
             return savedUser;
 
@@ -94,7 +94,7 @@ public class UserRepository {
                     user.setRole("admin");
                     break;
             }
-            System.out.println("user details from sql" + user);
+            // System.out.println("user details from sql" + user);
         }
         return user;
     }
@@ -110,7 +110,7 @@ public class UserRepository {
             user.setUserName(rs.getString("username"));
             user.setUserId(rs.getString("userId"));
             user.setRole("role");
-            System.out.println("user details from sql" + user);
+            // System.out.println("user details from sql" + user);
         }
         return user;
     }
@@ -131,7 +131,7 @@ public class UserRepository {
             user.setUserName(rs.getString("username"));
             user.setUserId(rs.getString("userId"));
             user.setUrl(rs.getString("userUrl"));
-            System.out.println(user);
+            // System.out.println(user);
         }
         return user;
     }
@@ -160,20 +160,13 @@ public class UserRepository {
     }
 
     public String updateInSql(User user) {
-        System.out.println(user.getUrl());
-        System.out.println(user.getUserId());
+      
         if (template.update(SQL_UPDATE_DISPLAY_PICTURE, user.getUrl(), user.getUserId())>0){
             return "Display picture successfully updated";
         } else{
             return "Unsuccessful Update";
         }
     }
-    // public String updatePetAccount(Pet pet, String petId, String userId) {
 
-    //   if (template.update(SQL_UPDATE_PET_INFORMATION, pet.getName(), pet.getDateOfBirth(), pet.getDateOfLastVaccination(), pet.getMicrochipNumber(), pet.getGender(), pet.getComments(), pet.getBreed(),petId, userId) > 0){
-    //     return "Pet's information successfully updated"; 
-    //   } else {
-    //     return "Unsuccessful Update";
-    //   }
     
 }

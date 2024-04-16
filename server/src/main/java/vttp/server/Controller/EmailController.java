@@ -29,13 +29,13 @@ public class EmailController {
 
     @PostMapping(path = "/sendemail")
     public ResponseEntity<String> sendEmail(@RequestBody String jsonString) {
-        System.out.println("received from front end "+ jsonString);
+      
          JsonReader jsonReader = Json.createReader(new StringReader(jsonString));
         JsonObject jsonObject = jsonReader.readObject();
         String email = jsonObject.getString("email");
         String name = jsonObject.getString("name");
         String appointmentDate = jsonObject.getString("appointmentDate");
-        System.out.println("appointment date from frontend"+appointmentDate);
+  
         String msg = "inquiry successfully sent";
       
         try {
@@ -51,7 +51,7 @@ public class EmailController {
     
         @PostMapping(path="/confirmation")
         public ResponseEntity<String> sendEmailConfirmation(@RequestBody String jsonResp){
-            System.out.println("received second email"+jsonResp);
+    
             JsonReader jsonReader = Json.createReader(new StringReader(jsonResp));
             JsonObject jsonObject = jsonReader.readObject();
             String email = jsonObject.getString("email");
@@ -73,7 +73,7 @@ public class EmailController {
         @PostMapping(path="/decline")
         public ResponseEntity<String> sendEmailDeclination(@RequestBody String jsonResp){
 
-            System.out.println("received third email"+jsonResp);
+           
             JsonReader jsonReader = Json.createReader(new StringReader(jsonResp));
             JsonObject jsonObject = jsonReader.readObject();
             String email = jsonObject.getString("email");

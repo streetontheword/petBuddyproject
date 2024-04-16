@@ -34,9 +34,9 @@ public class ForumController {
 
     @PostMapping(path = "/forum/postNew")
     public ResponseEntity<String> postNewThread(@RequestBody Threads thread) {
-        System.out.println("HEREREEEEEEE>>>>>>>>>>>>"+ thread);
+ 
         String threadId = forumSvc.postNewThread(thread);
-        System.out.println("hello>>>" + threadId);
+      
         JsonObject response = Json.createObjectBuilder()
                 .add("success", "New thread created with ID %s".formatted(threadId))
                 .build();
@@ -47,7 +47,7 @@ public class ForumController {
     @GetMapping(path = "/forum/threads")
     public ResponseEntity<List<Document>> getThreads() {
         List<Document> listOfDocs = forumSvc.getThreads();
-        System.out.println(listOfDocs);
+     
         return ResponseEntity.ok(listOfDocs);
     }
 
@@ -58,10 +58,10 @@ public class ForumController {
 
     @PostMapping(path="/forum/thread/{threadId}")
     public ResponseEntity<String> postNewComment(@PathVariable String threadId, @RequestBody Comment comment){
-        System.out.println("comment posted" + comment);
+       
         
         String commentUsername = forumSvc.postNewComment(comment, threadId);
-        System.out.println("doesz it get here??? "+ commentUsername); 
+   
 
         JsonObject response = Json.createObjectBuilder()
         .add("success", "New comment posted by %s".formatted(commentUsername))
@@ -72,7 +72,7 @@ public class ForumController {
 
         //needs to be username 
          webSocketHandler.notifyUsersAboutNewComment(commentUsername, notificationMessage);
-        System.out.println("reached me ");
+      
 
         
         return ResponseEntity.ok().body(response.toString());
@@ -91,7 +91,7 @@ public class ForumController {
 
     @GetMapping (path="/forum/thread-reply")
     public ResponseEntity<String> getReply(){
-        System.out.println( "hello you have reached me ");
+      
         return ResponseEntity.ok().body("null");
     }
 }

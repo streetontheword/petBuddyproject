@@ -18,7 +18,7 @@ return firstValueFrom(this.http.post<any>('/auth/saveUser',user))
 
 
 login(user: any): Promise<any> {
-    console.log(user)
+    // console.log(user)
     return firstValueFrom (this.http.post<any>('/auth/login', user))
 }
 

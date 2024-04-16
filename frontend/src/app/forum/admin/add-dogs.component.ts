@@ -50,33 +50,10 @@ export class AddDogsComponent implements OnInit{
     })
   }
 
-  // int id = dog.getId();
-  // String name = dog.getName();
-  // String gender = dog.getGender();
-  // String age = dog.getAge();
-  // String size = dog.getSize();
-  // String coat = dog.getCoat();
-  // List<String> listOfurl = dog.getUrl();
-  // String published = dog.getPublished();
-  // String description = dog.getDescription();
-  // List<String> listOfCharacteristics = dog.getCharacteristics();
-  // String primaryBreed = dog.getPrimaryBreed();
-  // String secondaryBreed = dog.getSecondaryBreed();
-  // // List<String> listOfBreeds = dog.getBreeds();
-  // List<String> listOfColors = dog.getColor();
-  // Boolean isMixed = dog.getIsMixed();
-  // Boolean isUnknown = dog.getIsUnknown();
-  // Boolean isGoodWithDogs = dog.getIsGoodWithDogs();
-  // Boolean isGoodWithChildren = dog.getIsGoodWithChildren();
-  // Boolean isGoodWithCats = dog.getIsGoodWithCats();
-  // Boolean isSpayedAndNeutered = dog.getIsSpayedAndNeutered();
-  // Boolean isHouseTrained = dog.getIsHouseTrained();
-  // Boolean isDeclawed = dog.getIsDeclawed();
-  // Boolean isSpecialNeeds = dog.getIsSpecialNeeds();
-  // Boolean isVaccinated = dog.getIsVaccinated();
+ 
 
   processForm(){
-   console.info(this.addDogForm.value)
+  //  console.info(this.addDogForm.value)
    this.adoptionSvc.addDogsIntoMongo(this.addDogForm,this.imageFile).then(
    (result)=>{
     alert(result.success)
@@ -89,11 +66,6 @@ export class AddDogsComponent implements OnInit{
    })
 
   }
-
-
-  // this.petBookletSvc.save(this.form, this.imageFile, this.userId).then((result)=>{
-  //   console.info(result)
-  // })
 
 
 

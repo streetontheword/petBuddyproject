@@ -22,7 +22,7 @@ export class NewthreadComponent implements OnInit{
   userurl!: any
 
   ngOnInit(): void {
-    console.info("onint")
+
       this.forumForm = this.createForm()
       this.userurl = this.localStorage.getItem("userurl")
      
@@ -39,7 +39,7 @@ export class NewthreadComponent implements OnInit{
     // const value = this.forumForm.value
     this.sub$ = this.forumSvc.postNewThread(this.forumForm, this.userurl).subscribe({
       next:((result)=>{
-        console.info(result)
+   
         this.route.navigate(['/forums'],)
       }),
       error:((err)=>{console.info(err)}),
@@ -47,13 +47,6 @@ export class NewthreadComponent implements OnInit{
     })
   }
 
-  // addThread() {
-  //   this.sub$ = this.service.postNewThread(this.newThreadForm).subscribe({
-  //     next: (result) => { this.router.navigate(['/forums']); },
-  //     error: (err) => { console.log(err); },
-  //     complete: () => { this.sub$.unsubscribe(); }
-  //   });
-  // }
 
 
 

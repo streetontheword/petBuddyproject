@@ -50,14 +50,14 @@ export class EmptybookletComponent {
 
   getUserId() {
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
+
   }
 
 
 
   processForm() {
     let value = this.form.value
-    console.info(value)
+    // console.info(value)
     this.petBookletSvc.save(this.form, this.imageFile, this.userId).then((result) => {
       alert(result.success)
       location.reload()

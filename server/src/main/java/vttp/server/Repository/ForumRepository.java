@@ -49,7 +49,7 @@ public class ForumRepository {
         Aggregation pipeline = Aggregation.newAggregation(project);
 
         List<Document> doc = template.aggregate(pipeline, "forum", Document.class).getMappedResults();
-        System.out.println("this is from the back!!!! >>>>>>"+doc);
+        // System.out.println("this is from the back!!!! >>>>>>"+doc);
         return doc;
 
     }
@@ -87,7 +87,7 @@ public class ForumRepository {
     public DeleteResult deleteThread(String threadId) {
         Query query = Query.query(Criteria.where("_id").is(threadId));
         DeleteResult result = template.remove(query, Document.class, "forum");
-        System.out.println("Delete result" + result);
+        // System.out.println("Delete result" + result);
         return result;
     }
 

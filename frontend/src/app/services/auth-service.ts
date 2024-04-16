@@ -18,7 +18,7 @@ export class AuthService{
     isAdmin$: Observable<boolean> = this.isAdminSubject.asObservable()  
 
     getAccessToken(): string | null {
-        console.log(">> AuthService: Tried to retrieve ACCESS_TOKEN - " + localStorage.getItem("token"))
+        // console.log(">> AuthService: Tried to retrieve ACCESS_TOKEN - " + localStorage.getItem("token"))
         return localStorage.getItem("token")
       }
 

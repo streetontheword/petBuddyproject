@@ -40,7 +40,7 @@ export class ForumService {
   //component store 
   loadThreadsIntoStore() {
     this.getThreads().subscribe((threads: Thread[]) => {
-      console.info("instore>>>", threads)
+      // console.info("instore>>>", threads)
       this.store.loadToStore(threads);
       console.info("logging data into component store")
     });
@@ -65,7 +65,7 @@ export class ForumService {
       text: comment,
       timestamp: ''
     }
-    console.info("commentobject",commentObject)
+    // console.info("commentobject",commentObject)
     return this.http.post<any>(`/api/forum/thread/${threadId}`, commentObject)
   }
 
@@ -95,7 +95,6 @@ export class ForumService {
   }
 
   readNotification(notifId: string){
-    console.info(notifId)
     const params = new HttpParams().set("notifId", notifId)
     return lastValueFrom(this.http.get<any>("/notification/read",{params:params}))
 

@@ -49,7 +49,7 @@ export class CalendarStore extends ComponentStore<CalendarEventsSlice> {
 
   loadCalendarEventsIntoStore() {
     this.calendarSvc.getConfirmedInquiry().subscribe((events: MyCalendarEvent[]) => {
-      console.info("instore>>>", events)
+      // console.info("instore>>>", events)
       this.loadToStore(events);
       console.info("logging events into component store")
     });

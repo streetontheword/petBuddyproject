@@ -27,8 +27,8 @@ export class NotificationcontentComponent implements OnInit {
   getNotifications(username: any) {
     this.forumSvc.getNotifications(username).then(
       (result) => {
-        console.info("RESULTS FROM BACKEDN", result)
-        console.info(Array.isArray(result));
+        // console.info("RESULTS FROM BACKEDN", result)
+        // console.info(Array.isArray(result));
         this.notificationArray = result
       }
 
@@ -43,7 +43,7 @@ export class NotificationcontentComponent implements OnInit {
     if (!notification.read) {
       this.forumSvc.readNotification(notification.id).then(
         (result) => {
-          console.info("what is this ", result)
+          // console.info("what is this ", result)
           this.notificationArray.splice(index,1)
         }
         ).catch(

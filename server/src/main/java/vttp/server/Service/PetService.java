@@ -28,7 +28,7 @@ public class PetService {
 
         try {
             url = petRepo.saveToS3(id, imageFile.getInputStream(), imageFile.getContentType(), imageFile.getSize());
-            System.out.println("In Svc>>>>> url retrieved" + url);
+            // System.out.println("In Svc>>>>> url retrieved" + url);
             pet.setImageUrl(url);
             return url;
 
@@ -58,7 +58,7 @@ public class PetService {
         Pet pet = new Pet();
         try {
             url = petRepo.updatePictureInS3(id, imageFile.getInputStream(), imageFile.getContentType(), imageFile.getSize());
-            System.out.println("In Svc>>>>> url retrieved" + url);
+            // System.out.println("In Svc>>>>> url retrieved" + url);
             pet.setImageUrl(url);
             return url;
  

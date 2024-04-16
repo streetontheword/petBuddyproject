@@ -26,11 +26,11 @@ export class SavedSearchComponent implements OnInit {
 
   retrieveFavorites() {
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
+    // console.info(this.userId)
     this.adoptionSvc.getFavorites(this.userId).then(
       (result) => {
         this.retrieveFavoriteList = result
-        console.info(this.retrieveFavoriteList)
+      
       })
       .catch((err)=>{console.info(err)})
   }

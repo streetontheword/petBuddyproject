@@ -18,7 +18,7 @@ export class LocalStorageService{
           this.usernameSubject.next(value)
         } else {
           if (key === "isAdmin"){
-            console.info("isadmin",value)
+            // console.info("isadmin",value)
             this.isAdminSubject.next(value)
           }
         }

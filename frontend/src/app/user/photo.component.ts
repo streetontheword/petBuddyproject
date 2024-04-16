@@ -37,13 +37,13 @@ export class PhotoComponent implements OnInit {
 
   getUserId(){
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
+    // console.info(this.userId)
   }
 
   onSave() {
     
     this.userSvc.updateDisplayPicture(this.imageFile, this.userId).then((result) => {
-      console.info(result)
+      // console.info(result)
     this.dialog.closeAll()
 
     })

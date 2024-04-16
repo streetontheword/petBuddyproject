@@ -49,7 +49,7 @@ public class UserController {
 
     JsonReader jsonReader = Json.createReader(new StringReader(jsonObjectString));
     JsonObject jsonObject = jsonReader.readObject();
-    System.out.println("RECEIVED>>>>>" + jsonObject);
+    
 
     String userId = UUID.randomUUID().toString().substring(0, 8);
     User user = new User();
@@ -63,7 +63,7 @@ public class UserController {
     user.setRole("user");
     user.setUrl(defaultUrl);
 
-    System.out.println("USER >>>" + user);
+   
 
     try {
       System.out.println("try");
@@ -75,7 +75,7 @@ public class UserController {
       return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(jsonObj.toString());
 
     } catch (Exception e) {
-      System.out.println("catch");
+      
       return new ResponseEntity<>(HttpStatusCode.valueOf(500));
     }
 
@@ -83,11 +83,11 @@ public class UserController {
 
   @PostMapping(path = "/login")
   public ResponseEntity<String> loginWithEmail(@RequestBody String resp) {
-    System.out.println("HERE");
+ 
 
     JsonReader jsonReader = Json.createReader(new StringReader(resp));
     JsonObject jsonObject = jsonReader.readObject();
-    System.out.println("RECEIVED>>>>>" + jsonObject);
+    
     String email = jsonObject.getString("email");
     String password = jsonObject.getString("password");
     User loginUser = new User();
@@ -105,19 +105,18 @@ public class UserController {
     String userUrl = user.getUrl();
     String role = tokenSvc.getRoleFromToken(token);
 
-    System.out.println("TOKEN>>>>" + token);
+    // System.out.println("TOKEN>>>>" + token);
     JsonObject jsonObj = Json.createObjectBuilder().add("success", token).add("userid", userId)
         .add("username", userName).add("role", role).add("userurl", userUrl).build();
 
     return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(jsonObj.toString());
-
 
   }
 
   @GetMapping(path = "/getUser/{userId}")
   @CrossOrigin
   public ResponseEntity<User> getUser(@PathVariable("userId") String userId) {
-    System.out.println(userId);
+    // System.out.println(userId);
     User user = userService.getUserByUserId(userId);
     return ResponseEntity.ok().body(user);
   }
@@ -129,7 +128,7 @@ public class UserController {
 
     User user = new User();
     String urlFromS3 = userService.saveToS3(imageFile);
-  
+
     user.setUserId(userId);
     user.setUrl(urlFromS3);
     String msg = userService.updateInSql(user);

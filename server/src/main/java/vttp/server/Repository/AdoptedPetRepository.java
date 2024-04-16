@@ -147,7 +147,7 @@ public class AdoptedPetRepository {
 
         String key = "images/%s".formatted(imageId);
 
-        System.out.println("ID from REPO>>>: " + imageId);
+        // System.out.println("ID from REPO>>>: " + imageId);
 
         PutObjectRequest putReq = new PutObjectRequest(
                 "streetontheword" // bucket name
@@ -159,19 +159,18 @@ public class AdoptedPetRepository {
         // upload to s3 bucked
         PutObjectResult result = s3.putObject(putReq);
         String url = s3.getUrl("streetontheword", key).toExternalForm();
-        System.out.println("In repo>>> URL: " + url);
+        // System.out.println("In repo>>> URL: " + url);
 
         return url;
 
     }
 
     public List<AdoptedDogProfile> getDogsFromMongo(int limit, int skip) {
-        System.out.println("limit" + limit);
-        System.out.println("skip" + skip);
+    
 
         List<AdoptedDogProfile> listOfAdoptedDogs = new ArrayList<>();
         Query query = new Query().limit(limit).skip(skip);
-        System.out.println("mongoquey" + query);
+       
         List<Document> results = template.find(query, Document.class, "dogsForAdoption");
 
         for (Document d : results) {
@@ -419,7 +418,7 @@ public class AdoptedPetRepository {
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date date = formatter.parse(intendedvisitdate);
-            System.out.println(date);
+       
             String dob = rs.getString("birthdate");
             Date dobdate = formatter.parse(dob);
             inquiry.setIntended_visit_date(date);
@@ -464,8 +463,6 @@ public class AdoptedPetRepository {
              """;
 
     public String declineInquiry(String inquiryId, String userId) {
-        System.out.println("inquiry id " + inquiryId);
-        System.out.println("user id " + userId);
 
         if (sqlTemplate.update(SQL_DECLINE_INQUIRY, inquiryId, userId) > 0) {
             return "Declined column updated successfully";
@@ -476,7 +473,7 @@ public class AdoptedPetRepository {
     public DeleteResult deleteAdoptedDog(int petId) {
         Query query = Query.query(Criteria.where("id").is(petId));
         DeleteResult result = template.remove(query, Document.class, "dogsForAdoption");
-        System.out.println("Delete result" + result);
+        // System.out.println("Delete result" + result);
         return result;
     }
 
@@ -493,7 +490,7 @@ public class AdoptedPetRepository {
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date date = formatter.parse(intendedvisitdate);
-            System.out.println(date);
+            // System.out.println(date);
             String dob = rs.getString("birthdate");
             Date dobdate = formatter.parse(dob);
             inquiry.setIntended_visit_date(date);
@@ -511,7 +508,7 @@ public class AdoptedPetRepository {
             inquiry.setDogName(rs.getString("dogName"));
             inquiry.setUrl(rs.getString("url"));
             inquiry.setSelectedHour(rs.getString("selectedHour"));
-            System.out.println(inquiry);
+            // System.out.println(inquiry);
 
         }
         return inquiry;

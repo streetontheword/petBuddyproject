@@ -57,9 +57,9 @@ public class PaymentController {
 		
 		
 		String cancel =  url + payment.getCancelUrl();
-		System.out.println(cancel);
+		
 
-      System.out.println("FROM ANGULAR  " + payment.getAmount());
+    //   System.out.println("FROM ANGULAR  " + payment.getAmount());
 		// We initilize stripe object with the api key
 		// init();
 		// We create a  stripe session parameters

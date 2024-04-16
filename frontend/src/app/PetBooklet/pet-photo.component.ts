@@ -41,13 +41,12 @@ export class PetPhotoComponent {
 
   getUserId() {
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
+
   }
 
   onSave() {
 
     this.petBookletSvc.updateDisplayPicture(this.imageFile, this.userId, this.petid).then((result) => {
-      console.info(result)
       alert(result.success)
       this.dialog.closeAll()
     })

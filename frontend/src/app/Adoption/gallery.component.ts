@@ -45,8 +45,7 @@ export class GalleryComponent {
 
     this.adoptionSvc.loadDogsIntoStore()
     this.store.getAllDogs.subscribe((result) => {
-      console.info("contents from store", result)
-
+      // console.info("contents from store", result)
     })
   }
 
@@ -59,7 +58,7 @@ export class GalleryComponent {
   fetchTotalItems() {
     this.count$ = this.adoptionSvc.getCountFromMongo().subscribe({
       next: ((response) => {
-        console.info(response)
+        // console.info(response)
         this.totalItems = response
         this.getAllDogs(this.currentPage, this.pageSize)
       }),
@@ -78,7 +77,7 @@ export class GalleryComponent {
   // }
 
   getAllDogs(currentPage: number, pageSize: number) {
-    console.info("currentpage", currentPage, "pagesize", pageSize)
+   
     this.dogsub$ = this.adoptionSvc.getDogsFromMongo(currentPage, pageSize).subscribe({
       next: ((response) => {
         this.dogArray = response
@@ -91,15 +90,15 @@ export class GalleryComponent {
   }
 
   onPageChange(event: any) {
-    console.log('Page event:', event);
+    // console.log('Page event:', event);
     this.currentPage = event.pageIndex;
-    console.info("new current page", this.currentPage, this.pageSize)
+    // console.info("new current page", this.currentPage, this.pageSize)
     this.getAllDogs(this.currentPage, this.pageSize);
-    // Here you can perform actions with the pagination event, such as fetching data for the new page
+  
   }
 
   onSelectionChange(event: any) {
-    console.log('Selected option:', event.value);
+    // console.log('Selected option:', event.value);
     this.searchByGender(event.value);
   }
 
@@ -114,16 +113,11 @@ export class GalleryComponent {
         this.dogArray = result
       }
     })
-    // Add your search logic here
+
   }
 
 
-  // resetField() {
-  //   this.sub$ = this.store.getAllDogs.subscribe((result) => {
-  //     this.dogArray = result
 
-  //   })
-  // }
 
 
   resetField() {
@@ -132,10 +126,10 @@ export class GalleryComponent {
 
   processSearch() {
     let search: string = this.searchBar.value["search"]
-    console.info(search)
+    // console.info(search)
     this.sub$ = this.store.getMatchingDogByName(search).subscribe({
       next: (result) => {
-        console.info("here is the result>>>>>", result)
+        // console.info("here is the result>>>>>", result)
         this.dogArray = result
       }
     })
@@ -151,7 +145,7 @@ export class GalleryComponent {
   deletePost(petId: number){
 
     this.adoptionSvc.deleteAdoptedPet(petId).then((result)=>{
-      console.info(result)
+      // console.info(result)
       alert(result.deleted)
       this.getAllDogs(this.currentPage, this.pageSize)
     })

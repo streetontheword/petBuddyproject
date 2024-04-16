@@ -33,35 +33,23 @@ export class PetsummaryComponent implements OnInit {
 
   getUserId(){
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
   }
   
 
   retrievePets(userId: string) {
     this.petSvc.retrievePet(userId).then((result)=>{
-      console.info(result)
-      console.info(Array.isArray(result));
       this.petArray = result
      
       
     })
-    // this.sub$ = this.petSvc.retrievePet(userId).subscribe({
-    // next: (result)=>{
-    //   console.info("listofpets>>", result)
-    //   // console.info(Array.isArray(result));
-    //   this.petArray = result
-      
-    // },
-    // error: (err)=>{console.info(err)},
-    // complete: ()=>{this.sub$.unsubscribe}
-    // })
+
 
   }
 
   press(petId: number){
 
     this.route.navigate(['/dog', petId])
-    console.info("pressed")
+
   }
 
   deleteButton(petId: number){

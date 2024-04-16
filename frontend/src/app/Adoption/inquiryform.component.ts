@@ -68,19 +68,19 @@ export class InquiryformComponent implements OnInit {
 
   processForm() {
     this.userid = this.localStorage.getItem("userid")
-    console.info("button was pressed")
+    // console.info("button was pressed")
     let value: any = this.inquiryForm.value
-    console.info(value)
+    // console.info(value)
     this.firstName = this.inquiryForm.value['firstName']
     this.email = this.inquiryForm.value['email']
     this.appointmentDate = this.inquiryForm.value['dateOfViewing']
 
 
-    console.info(this.petid)
+    // console.info(this.petid)
 
     this.adoptionSvc.makeInquiry(this.userid, this.petid, this.url, this.petName, this.inquiryForm).then(
       (result) => {
-        console.info(result)
+        // console.info(result)
         alert("Inquiry sent!")
 
         //send confirmation email 

@@ -57,10 +57,10 @@ export class LandingComponent implements OnInit {
     this.localStorage.removeToken("token")
 
     let value = this.form.value
-    console.info(value)
+    // console.info(value)
     this.userSvc.login(value).then((result) => {
 
-      console.info("this is the result when login",result)
+      // console.info("this is the result when login",result)
 
       // this.userId = result
       

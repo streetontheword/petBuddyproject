@@ -194,7 +194,7 @@ public class DogApiService {
                     String picUrl = jsonPicObject.getString("full");
                     listOfUrls.add(picUrl);
                     dog.setUrl(listOfUrls);
-                    System.out.println("pictures " + picUrl);
+                    // System.out.println("pictures " + picUrl);
                 }
             } else {
                 System.out.println("photos are null");
@@ -262,7 +262,7 @@ public class DogApiService {
 
         try {
             url = adoptPetRepo.saveToS3(id, imageFile.getInputStream(), imageFile.getContentType(), imageFile.getSize());
-            System.out.println("In Svc>>>>> url retrieved" + url);
+            // System.out.println("In Svc>>>>> url retrieved" + url);
             
             return url;
 

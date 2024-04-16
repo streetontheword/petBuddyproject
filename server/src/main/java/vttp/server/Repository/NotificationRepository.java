@@ -47,7 +47,7 @@ public class NotificationRepository {
 
     public SqlRowSet getNotifications(String username) {
         SqlRowSet rowset = template.queryForRowSet(SQL_GET_NOTIFICATIONS, username);
-        System.out.println(rowset);
+        // System.out.println(rowset);
         return rowset;
     }
 
@@ -58,7 +58,7 @@ public class NotificationRepository {
             """;
 
     public long readNotification(String notifId) {
-        System.out.println("read notif");
+        // System.out.println("read notif");
         long count = template.update(SQL_READ_NOTIFICATION, notifId);
         return count;
     }

@@ -46,7 +46,7 @@ export class ThreadComponent implements OnInit {
   ngOnInit(): void {
 
     this.isAdmin = this.authSvc.isAdminLoggedIn()
-    console.info("threadid>>>>", this.threadId)
+
     // this.showDetails(this.threadId)
     this.getIndividualThread(this.threadId)
     this.commentForm = this.createComment()
@@ -70,7 +70,7 @@ export class ThreadComponent implements OnInit {
           userurl: result.userurl,
           timestamp: result.timestamp
         }
-        console.info("thread author", this.threadAuthor)
+        // console.info("thread author", this.threadAuthor)
        
     
 
@@ -90,11 +90,11 @@ export class ThreadComponent implements OnInit {
   submitComment() {
     let value = this.commentForm.value['comment']
     this.commentorAuthor = this.localStorage.getItem("username")
-    console.info("commentor author", this.commentorAuthor)
-    console.info(value) 
+    // console.info("commentor author", this.commentorAuthor)
+    // console.info(value) 
     this.forumSvc.postComment(this.threadId, value).subscribe({
       next: ((result) => {
-        console.info("what result is this",result)
+        // console.info("what result is this",result)
         alert(result.success)
         this.getIndividualThread(this.threadId)
         this.commentForm.reset()
@@ -106,7 +106,7 @@ export class ThreadComponent implements OnInit {
       
     })
     if (this.threadAuthor != this.commentorAuthor) {
-      console.info("this is sent to notification", value)
+      // console.info("this is sent to notification", value)
       this.sendNotification(value)
      
     }
@@ -118,7 +118,7 @@ export class ThreadComponent implements OnInit {
     const payload = this.createCommentNotification(content, this.threadAuthor, this.commentorAuthor, this.threadId)
     this.forumSvc.addNotification(payload).then(
       () => {
-        console.log("Notification success")
+        // console.log("Notification success")
       }
     ).catch(
       () => {
@@ -132,7 +132,7 @@ export class ThreadComponent implements OnInit {
 
     this.deletedThread$ = this.forumSvc.deleteComment(this.singleThread?._id).subscribe({
       next: ((result) => {
-        console.info(result)
+        // console.info(result)
         alert(result.deleted)
         this.router.navigate(['/forums'])
 
@@ -151,7 +151,7 @@ export class ThreadComponent implements OnInit {
       username: to,
       text: text,
     }
-    console.info(payload)
+    // console.info(payload)
     return payload
 
   }

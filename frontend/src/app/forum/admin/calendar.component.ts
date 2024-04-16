@@ -82,13 +82,13 @@ export class CalendarComponent implements OnInit, OnDestroy {
 
     this.initDays();
 
-    console.info("i am in calendar component")
+    // console.info("i am in calendar component")
     this.isAdmin = this.authSvc.isAdminLoggedIn()
     this.calendarStore.loadCalendarEventsIntoStore() //data is loaded into store and confirmed
     // this.getAppointments()
 
     this.eventsSubscription = this.calendarStore.events$.subscribe(eventsFromSQL => {
-      console.log("Current events in the store:", eventsFromSQL);
+      // console.log("Current events in the store:", eventsFromSQL);
       const data = eventsFromSQL
       this.events = []
       for (const obj of data) {
@@ -99,7 +99,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
         const ownerName = obj.firstName;
         const dateTime = new Date(date);
         const inquiryId = obj.inquiryId
-        console.info("inquiry ID>>", inquiryId)
+        // console.info("inquiry ID>>", inquiryId)
         const formattedDate = this.datePipe.transform(dateTime, 'shortDate');
         //start
         const combinedDateTimeString = `${formattedDate} ${time}`;
@@ -123,7 +123,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
 
 
   mapAppointmentsToEvents(inquiryId: string, combinedDateTimeString: string, endDateTime: Date, ownerName: string): void {
-    // console.info(combinedDateTimeString)
+
     this.inquiryID = inquiryId
 
     const event: any = {
@@ -142,10 +142,10 @@ export class CalendarComponent implements OnInit, OnDestroy {
       },
 
     };
-    console.info(event)
+  
     this.events.push(event)
     this.refresh()
-    console.log("SHOULD BE FULL LIST>>>", this.events)
+ 
 
 
     // this.cdr.detectChanges();
@@ -154,7 +154,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   private dialog = inject(MatDialog)
 
   openDialog(inquiryId: string): void {
-    console.info("dialog pressed")
+
 
     const dialogRef = this.dialog.open(DetailsComponent, {
       data: {
@@ -163,14 +163,14 @@ export class CalendarComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+   
 
     });
   }
 
   handleEventClicked({ event }: { event: AngularCalendarEvent<any> }): void {
     // Here you can implement the logic to handle the event click
-    console.log('Event clicked:', event);
+    // console.log('Event clicked:', event);
     const inquiryId = (event.meta as any).inquiryId;
     // console.log('Inquiry ID:', inquiryId);
 

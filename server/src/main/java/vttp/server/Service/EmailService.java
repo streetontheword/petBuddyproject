@@ -73,7 +73,7 @@ Content content = new Content("text/html", emailContent);
     ZonedDateTime dateTime = ZonedDateTime.parse(appointmentDate);
 
     String formattedDate = dateTime.format(DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy", Locale.ENGLISH));
-    System.out.println(formattedDate);
+    // System.out.println(formattedDate);
 
     Email from = new Email(fromEmail, "PetBuddy");
     String emailTo = email;
@@ -126,7 +126,7 @@ Content content = new Content("text/html", emailContent);
     ZonedDateTime dateTime = ZonedDateTime.parse(appointmentDate);
 
     String formattedDate = dateTime.format(DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy", Locale.ENGLISH));
-    System.out.println(formattedDate);
+    // System.out.println(formattedDate);
 
     Email from = new Email(fromEmail, "PetBuddy");
     String emailTo = email;

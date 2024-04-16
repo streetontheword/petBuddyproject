@@ -27,9 +27,8 @@ export class IndividualpetComponent implements OnInit{
   dog!: PersonalPet 
 
   ngOnInit(): void {
-    console.info("oninit")
       this.petId = this.route.snapshot.params['petId']
-      console.info(this.petId)
+      // console.info(this.petId)
       this.retrievePet(this.petId)
       this.username = this.localStorage.getItem("username")
   }
@@ -37,7 +36,7 @@ export class IndividualpetComponent implements OnInit{
 
   retrievePet(petId: number){
     this.petSvc.getIndividualPet(petId).then((result)=>{
-      console.info(result)
+      // console.info(result)
      this.dog = {
       petId: result.petId,
       userId: result.userId,
@@ -59,7 +58,7 @@ export class IndividualpetComponent implements OnInit{
  
    
   openDialog(): void {
-    console.info("dialog pressed")
+
 
     const dialogRef = this.dialog.open(PetPhotoComponent, {
       data: {
@@ -69,7 +68,7 @@ export class IndividualpetComponent implements OnInit{
 
     dialogRef.afterClosed().subscribe(result => {
       this.retrievePet(this.petId)
-      console.log('The dialog was closed');
+
     
 
     });
@@ -84,7 +83,7 @@ export class IndividualpetComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
       this.retrievePet(this.petId)
 
     });

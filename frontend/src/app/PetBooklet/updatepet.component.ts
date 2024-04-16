@@ -28,7 +28,7 @@ export class UpdatepetComponent implements OnInit{
 
 
 ngOnInit(): void {
-    console.info("oninit")
+
     this.petId = this.matDialog.petId
     this.updateForm = this.createForm()
     // this.petId = this.route.snapshot.params['petId']
@@ -53,7 +53,6 @@ ngOnInit(): void {
 
   retrievePet(petId: number){
     this.petSvc.getIndividualPet(petId).then((result)=>{
-      console.info("retrieved result",result)
       this.updateForm.patchValue(result)
    
       
@@ -65,18 +64,17 @@ ngOnInit(): void {
 
   getUserId(){
     this.userId = this.localStorage.getItem("userid")
-    console.info(this.userId)
+
   }
 
   
  
 
   submit(){
-    console.info("button pressed")
-    console.info(this.updateForm.value)
+
     this.userId = this.localStorage.getItem("userid")
     this.petSvc.updateFormFields(this.updateForm, this.petId, this.userId).then((result)=>{
-      console.info(result)
+
       alert(result.success)
       this.dialog.closeAll()
      

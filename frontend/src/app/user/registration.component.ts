@@ -92,7 +92,7 @@ isPasswordConditionMet(condition: string) {
 
   processForm(){
     const value = this.userForm.value
-    console.info("Value from form>>>>>",value)
+    // console.info("Value from form>>>>>",value)
     this.userSvc.saveUser(value).then((result)=>{
       // console.info("view fetched date", result)
       alert(result.success)
@@ -102,10 +102,6 @@ isPasswordConditionMet(condition: string) {
     }
 
 
-    // this.newsSvc.saveForm(this.form, this.imageFile)
-    // .then((result) => {
-    //   console.info("view fetched date", result)
-    
   }
 
 

@@ -17,8 +17,8 @@ export class PetBooklet{
 
        
         const value = form.value
-        console.info("form values>>>>",value)
-        console.info("SEE IMGAGE ELEMENT REF>>>>>>", imageFile.nativeElement.files[0])
+        // console.info("form values>>>>",value)
+        // console.info("SEE IMGAGE ELEMENT REF>>>>>>", imageFile.nativeElement.files[0])
 
         const dataForm = new FormData()
         dataForm.set('name', value.name)
@@ -48,7 +48,7 @@ export class PetBooklet{
     }
 
     updateFormFields(form: FormGroup, petId: number, userId: string): Promise<any>{
-        console.info("userid", userId)
+        // console.info("userid", userId)
         const value = form.value
         const updatedPetObject={
             petId: petId,
@@ -77,8 +77,8 @@ export class PetBooklet{
     }
 
     deleteIndividualPet(petId: number, userId: string): Promise<any> {
-        console.info(petId)
-        console.info(userId)
+        // console.info(petId)
+        // console.info(userId)
         return firstValueFrom(this.http.post<any>(`/api/${petId}/deletePet`, userId))  
     }
 

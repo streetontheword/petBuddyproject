@@ -29,7 +29,7 @@ public class ThreadReplyWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) {
-        System.out.println("Received message from client: " + message.getPayload().toString());
+        // System.out.println("Received message from client: " + message.getPayload().toString());
         JsonReader jr = Json.createReader(new StringReader(message.getPayload().toString()));
         JsonObject payload = jr.readObject();
         String type = payload.getString("type");
@@ -41,23 +41,20 @@ public class ThreadReplyWebSocketHandler extends TextWebSocketHandler {
             }
         }
 
-        // System.out.println("session id: " + session.getId());
-        // System.out.println("session to string: " + session.toString());
-        // System.out.println("principal: " + session.getPrincipal());
-        // System.out.println("local address: " + session.getLocalAddress());
+   
 
     }
 
     public void addToSessions(String username, WebSocketSession session) {
-        System.out.println(username);
+     
         if (sessions.containsKey(username)) {
             sessions.get(username).add(session);
-            System.out.println(sessions);
+            // System.out.println(sessions);
         } else {
             List<WebSocketSession> list = new ArrayList<>();
             list.add(session);
             sessions.put(username, list);
-            System.out.println("list" + sessions);
+            // System.out.println("list" + sessions);
         }
 
     }
@@ -67,7 +64,7 @@ public class ThreadReplyWebSocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
         String origin = session.getHandshakeHeaders().getFirst("Origin");
-        System.out.println("id: " + session.getId());
+        // System.out.println("id: " + session.getId());
         logger.info("WebSocket connection established from origin: {}", origin);
 
     }

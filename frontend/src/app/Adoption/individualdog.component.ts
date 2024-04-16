@@ -32,9 +32,9 @@ export class IndividualdogComponent implements OnInit {
   url!: string
 
   ngOnInit(): void {
-    console.info("oninit")
+    // console.info("oninit")
     this.petId = this.route.snapshot.params['id']
-    console.info(this.petId)
+    // console.info(this.petId)
 
     this.getIndividualDog(this.petId)
   }
@@ -44,8 +44,8 @@ export class IndividualdogComponent implements OnInit {
     this.adoptionSvc.getIndividualDogs(id).then((result) => {
       this.dogDetails.push(result)
       
-      console.info(this.userId)
-      console.info("individual dog>>>",result)
+      // console.info(this.userId)
+      // console.info("individual dog>>>",result)
       //for the saved responses
     
               this.petName = result.name,
@@ -59,7 +59,7 @@ export class IndividualdogComponent implements OnInit {
   }
 
   openDialog(): void {
-    console.info("dialog pressed")
+    
 
     const dialogRef = this.dialog.open(InquiryformComponent, {
       data: {
@@ -71,13 +71,13 @@ export class IndividualdogComponent implements OnInit {
     
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    
       // Handle dialog close event
     });
   }
 
     addToFavorite() {
-      console.info("this button is being pressed ")
+ 
       this.userId = this.localStorage.getItem("userid")
       const dog: savedDog = {
         "id": this.petId,
@@ -89,13 +89,13 @@ export class IndividualdogComponent implements OnInit {
         
       }
 
-      console.info(this.userId, this.petId, this.gender, this.primaryBreed, this.secondaryBreed, this.petName, this.url)
+      // console.info(this.userId, this.petId, this.gender, this.primaryBreed, this.secondaryBreed, this.petName, this.url)
       this.adoptionSvc.favoriteDogs(this.userId,dog).then((result)=>{
-        console.info(result)
+        // console.info(result)
         alert(result.success)
       })
       .catch((err)=>{
-        console.info(err)
+        // console.info(err)
         alert(err)
       })
     }

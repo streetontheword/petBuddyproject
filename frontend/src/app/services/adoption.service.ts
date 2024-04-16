@@ -27,11 +27,10 @@ export class AdoptionService {
       }
       
     getDogsFromMongo(page: number, pageSize: number): Observable<any> {
-        console.info(page, pageSize)
+     
         const params = new HttpParams()
         .set('page', page)
         .set('pageSize', pageSize);
-        console.info(params)
 
         return (this.http.get("/api/getDogs", {params}))
 
@@ -71,33 +70,12 @@ export class AdoptionService {
     }
 
     
-      // int id = dog.getId();
-
-
-  // String published = dog.getPublished();
-  // String description = dog.getDescription();
-  // List<String> listOfCharacteristics = dog.getCharacteristics();
-  // String primaryBreed = dog.getPrimaryBreed();
-  // String secondaryBreed = dog.getSecondaryBreed();
-  // // List<String> listOfBreeds = dog.getBreeds();
-  // List<String> listOfColors = dog.getColor();
-  // Boolean isMixed = dog.getIsMixed();
-  // Boolean isUnknown = dog.getIsUnknown();
-  // Boolean isGoodWithDogs = dog.getIsGoodWithDogs();
-  // Boolean isGoodWithChildren = dog.getIsGoodWithChildren();
-  // Boolean isGoodWithCats = dog.getIsGoodWithCats();
-  // Boolean isSpayedAndNeutered = dog.getIsSpayedAndNeutered();
-  // Boolean isHouseTrained = dog.getIsHouseTrained();
-  // Boolean isDeclawed = dog.getIsDeclawed();
-  // Boolean isSpecialNeeds = dog.getIsSpecialNeeds();
-  // Boolean isVaccinated = dog.getIsVaccinated();
-
+    
 
 
 
     loadDogsIntoStore() {
         this.getDogsFromMongoWithoutPagination().subscribe((dogs: Dog[]) => {
-          console.info("instore>>>", dogs)
           this.store.loadToStore(dogs);
           console.info("logging data into component store")
         })
@@ -159,7 +137,6 @@ export class AdoptionService {
             appointmentDate: appointmentDate
         }
 
-    console.info("reaching email backend", inquiryObject)
         return this.http.post<any>("/api/sendemail", inquiryObject)
     }
 
@@ -179,7 +156,7 @@ export class AdoptionService {
     }
 
     getIndividualAppointment(inquiryId: string ):Promise<ConfirmedInquiry>{
-        console.info("this isthe inquiry id" , inquiryId)
+
         return firstValueFrom(this.http.get<ConfirmedInquiry>(`/api/getIndividual/${inquiryId}`))
 
         
