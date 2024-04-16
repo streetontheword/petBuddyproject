@@ -1,0 +1,21 @@
+.forbidden {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+   
+}
+
+.forbidden button{
+    background-color: peru;
+    color: white;
+    font-size: 20px;
+    margin : 2%;
+}
+
+.forbidden h1{
+    font-weight: bold;
+    color: maroon;
+
+}

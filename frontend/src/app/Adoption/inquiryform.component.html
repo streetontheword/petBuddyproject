@@ -1,0 +1,101 @@
+<mat-dialog-content class="mat-typography">
+
+<h2 mat-dialog-title>Thank you for your interest in adopting</h2>
+<mat-card-content>
+    <p>Please fill in the short form below to share some information with us so that we can assist you in arranging a viewing session</p>
+</mat-card-content>
+<br>
+<form [formGroup]="inquiryForm">
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" placeholder="Enter your first Name" formControlName="firstName">
+            <mat-error *ngIf="inquiryForm.controls['firstName'].hasError('required')">First Name is required</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" placeholder="Enter your last Name" formControlName="lastName">
+            <mat-error *ngIf="inquiryForm.controls['lastName'].hasError('required')">Last Name is required</mat-error>
+
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter your email" formControlName="email">
+            <mat-error *ngIf="inquiryForm.controls['email'].hasError('required')">Email is required</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Birthday</mat-label>
+            <input matInput [matDatepicker]="datePicker" placeholder="MM/DD/YYY" formControlName="dateOfBirth">
+            <mat-datepicker-toggle matIconSuffix [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+            <mat-error *ngIf="inquiryForm.controls['dateOfBirth'].hasError('required')">Date of Birth is required</mat-error>
+            <mat-error *ngIf="inquiryForm.controls['dateOfBirth'].hasError('pastDate')">Please enter a past date.</mat-error>
+            
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <input matInput type="text" placeholder="Enter your gender" formControlName="gender">
+        </mat-form-field>
+        
+        <div class="checkbox">
+           First Time Owner? <mat-checkbox formControlName="firstTimeOwner"></mat-checkbox>
+        </div>
+    </div>
+
+    <div class="row">
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Nationality</mat-label>
+            <input matInput type="text" placeholder="Enter your nationality" formControlName="nationality">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>If you are not Singaporean, how long have you been living in Singapore?</mat-label>
+            <input matInput type="text" placeholder="Enter the duration in years" formControlName="other">
+            <mat-hint>*Only answer this question if the answer to the previous question is not Singaporean</mat-hint>
+        </mat-form-field>
+        
+    </div>
+    
+    <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Intended Visit Date</mat-label>
+        <input matInput [matDatepicker]="dateOfViewing" placeholder="Enter intended visit date" formControlName="dateOfViewing">
+        <mat-datepicker-toggle matIconSuffix [for]="dateOfViewing"></mat-datepicker-toggle>
+        <mat-datepicker #dateOfViewing></mat-datepicker>
+        <mat-error *ngIf="inquiryForm.get('dateOfViewing')?.hasError('notFutureDate')">Please choose a future date</mat-error>
+       
+        
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Select Time</mat-label>
+        <mat-select formControlName="selectedHour">
+          <mat-option *ngFor="let hour of hours" [value]="hour">{{ hour }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="inquiryForm.controls['selectedHour'].hasError('required')">Selection of time is required</mat-error>
+
+      </mat-form-field>
+  
+    </div>
+    
+    <div class="actions-container">
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button  cdkFocusInitial (click)="processForm()" [disabled]="inquiryForm.invalid">Send</button>
+        </mat-dialog-actions>
+    </div>
+
+        
+    
+</form>
+</mat-dialog-content>
+
+

@@ -1,0 +1,83 @@
+/* Container for pending appointments */
+.pending-appointments {
+  text-align: center;
+  margin-top: 2%;
+}
+
+/* Container for inquiry cards */
+.inquiry-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+
+}
+.name{
+  color: black;
+}
+
+/* Individual inquiry card */
+.inquiry-card {
+  width: 400px;
+  margin: 10px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.inquiry-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header of inquiry card */
+.inquiry-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+
+/* Subtitle of inquiry card */
+.inquiry-card-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+.inquiry-card-email {
+  font-size: 14px;
+  color: #666;
+}
+/* Content of inquiry card */
+.inquiry-card-content {
+  margin-bottom: 10px;
+}
+
+/* Actions of inquiry card */
+
+
+
+/* Accept and decline buttons */
+.accept-button, .decline-button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.accept-button {
+  background-color: #9DC183;
+  color: #ffffff;
+}
+
+.decline-button {
+  background-color: #9B3D3D;
+  color: #ffffff;
+}
+
+.accept-button:hover, .decline-button:hover {
+  opacity: 0.8;
+}

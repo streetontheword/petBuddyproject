@@ -1,0 +1,25 @@
+
+
+<div *ngIf="dog">
+<div class="pet-details" >
+    <h1><strong>{{ dog.name }}</strong></h1>
+    <div class="info">
+      <p><strong>Microchip Number:</strong> {{ dog.microchipNumber }}</p>
+      <p><strong>Date of Birth:</strong> {{ dog.dateOfBirth | date }}</p>
+      <p><strong>Date of Last Vaccination:</strong> {{ dog.dateOfLastVaccination | date }}</p>
+      <p><strong>Gender:</strong> {{ dog.gender }}</p>
+      <p><strong>Breed:</strong> {{ dog.breed }}</p>
+      <p><strong>Comments:</strong> {{ dog.comments }}</p>
+
+      <button type="button"  mat-raised-button class="peru-button" (click)="openDetailsDialog()">Update details</button>
+
+    
+
+
+    </div>
+    <div class="image-container">
+      <img [src]="dog.imageUrl" alt="Pet Image" height="350px">
+    </div>
+    <button type="button"  mat-raised-button class="peru-button" (click)="openDialog()">Change Image</button> 
+    <button type="button" mat-raised-button [routerLink]="['/MyInfo', username]" style="background-color: #800000; color: white; border-radius: 10px; margin-left: 1%;" >Back</button>
+  </div>

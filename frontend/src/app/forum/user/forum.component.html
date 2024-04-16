@@ -1,0 +1,63 @@
+<!-- forum.component.html -->
+
+<div class="banner-container">
+   <img class="banner-image" src="assets/happydog.jpeg" alt="Banner Image">
+ </div>
+ 
+ <div class="container">
+<h1><strong>Welcome! Have a look around, and join the discussions</strong></h1>
+<h2></h2>
+<p>Our Dog Forum is a safe online community dedicated to everything related to dogs. Whether you're a seasoned dog owner, considering getting a dog, or just love these furry companions, you'll find a welcoming and supportive community here. Join fellow dog lovers to discuss various topics such as training, and behavior or health and nutrition etc.</p>
+<p>So come on in, introduce yourself, and let's start wagging our tails together in the Dog Forum!</p>
+
+<div class="button-and-form-container">
+   <button mat-raised-button class="peru-button" [routerLink]="['/forums/new']">New Thread</button>
+ 
+   
+   <form [formGroup]="searchBar" class="search-form">
+      <mat-form-field class="search-input" appearance="fill">
+        <input matInput placeholder="Search For Keyword" formControlName="search">
+        <button mat-button matSuffix color="primary" (click)="processSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-button matSuffix color="warn" (click)="clearSearch()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-flat-button type="button" (click)="resetField()">RESET Search</button>
+    </form>
+    
+    
+ </div>
+ 
+ <div *ngFor="let t of threadInStore$" class="forum-thread">
+   <mat-card>
+     <mat-card-header>
+       <div mat-card-avatar class="thread-avatar">
+        <img [src]="t.userurl" alt="">
+       </div>
+       <mat-card-title>{{ t.title }}</mat-card-title>
+       <mat-card-subtitle> <mat-icon>account_circle</mat-icon>{{ t.username }}</mat-card-subtitle>
+      
+ 
+     </mat-card-header>
+     <mat-card-content>
+       <p>{{ t.timestamp }}</p>
+       <p>{{ t.text }}</p>
+     </mat-card-content>
+     <mat-card-actions>
+       <button mat-button style=" color: #CD853F;" [routerLink]="['/forums', t._id]">
+         View Thread
+         <mat-icon>visibility</mat-icon>
+       </button>
+       <button mat-button style=" color: #800000;">
+         {{ t.comments.length }} Comments
+         <mat-icon>comment</mat-icon>
+       </button>
+      </mat-card-actions>
+   </mat-card>
+ </div>
+
+</div>
+
+

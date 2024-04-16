@@ -1,0 +1,78 @@
+<div class="login-page">
+  <div class="image-container">
+      <img src="assets/loginpage.jpg" alt="Login Page Background">
+  </div>
+  <div class="login-container">
+ <h2>Registration</h2>
+
+ <form [formGroup]="userForm" (submit)="processForm()">
+ 
+  
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter your email">
+        </mat-form-field>
+   
+     
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" formControlName="firstName" placeholder="Please enter your first name">
+        </mat-form-field>
+    
+     
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" formControlName="lastName" placeholder="Please enter your last name">
+        </mat-form-field>
+   
+  
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username" placeholder="Please provide your username">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="full-width-input" >
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" formControlName="password">
+          <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+     <br>
+     <div class="mat-hint">
+        <mat-hint *ngIf="userForm.get('password')?.dirty">
+          <mat-icon [fontIcon]="isPasswordConditionMet('minlength') ? 'check' : 'close'"
+            [class]="isPasswordConditionMet('minlength') ? 'valid' : 'invalid'"></mat-icon>
+          <span>At least 8 characters</span><br>
+          <mat-icon [fontIcon]="isPasswordConditionMet('noLowercase') ? 'check' : 'close'"
+            [class]="isPasswordConditionMet('noLowercase') ? 'valid' : 'invalid'"></mat-icon>
+          One lowercase letter<br>
+          <mat-icon [fontIcon]="isPasswordConditionMet('noUppercase') ? 'check' : 'close'"
+            [class]="isPasswordConditionMet('noUppercase') ? 'valid' : 'invalid'"></mat-icon>
+          One uppercase letter<br>
+          <mat-icon [fontIcon]="isPasswordConditionMet('noNumeric') ? 'check' : 'close'"
+            [class]="isPasswordConditionMet('noNumeric') ? 'valid' : 'invalid'"></mat-icon>
+          One number
+        </mat-hint>
+   </div>
+    
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="passwordConfirm">
+       
+
+        </mat-form-field>
+    
+    <div *ngIf="userForm.hasError('passwordsDoNotMatch') && (userForm.get('password')?.dirty || userForm.get('passwordConfirm')?.dirty)">
+      <mat-error>Passwords do not match</mat-error>
+    </div>
+    <br>
+ 
+    
+    <div class="actions">
+      <button mat-raised-button  color="warn" type="button" [routerLink]="['/login']">Back</button>
+      <button mat-raised-button  type="button" (click)="reset()">Clear</button>
+      <button mat-raised-button type="submit" [disabled]="userForm.invalid">Register</button>
+  </div>
+ 
+ </form>
+  </div>
+</div>

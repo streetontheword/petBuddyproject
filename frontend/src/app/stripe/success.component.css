@@ -1,0 +1,47 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content {
+    flex: 1;
+    padding: 100px;
+    text-align: center;
+    margin-top:5%;
+
+}
+
+.content h2{
+    font-size: 30px;
+    color: maroon;
+}
+
+
+.picture-container {
+    flex: 1;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+.picture-container img {
+    width: 550px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 50px;
+
+
+}
+
+.peru-button{
+    background-color: #CD853F;
+    /* Peru color */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 50%;
+}

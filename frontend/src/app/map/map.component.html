@@ -1,0 +1,70 @@
+<div class="banner-container">
+  <img class="banner-image" src="assets/adoptioncenter.jpeg" alt="Banner Image">
+  <h1><strong>Contact Us</strong></h1>
+</div>
+
+
+
+<div class="contact-section">
+  <div class="contact-container">
+    <h2>Get in Touch with Our Pack!</h2>
+
+    <div class="contact-item">
+      <mat-icon>email</mat-icon>
+      <p><strong>Email Us:</strong> <a href="mailto:petbuddy2024@gmail.com">petbuddy2024&#64;gmail.com</a> (general)</p>
+    </div>
+
+    <div class="contact-item">
+      <mat-icon>phone</mat-icon>
+      <p><strong>Call Us:</strong> <a href="tel:+6562875355">+65 6287 5355</a></p>
+    </div>
+
+    <div class="contact-item">
+      <mat-icon>location_on</mat-icon>
+      <p><strong>Visit Us:</strong> 50 Sungei Tengah Road, Singapore 699012</p>
+      <p>You may take bus 172 from Chua Chu Kang bus interchange or bus 975 from the bus stop in front of the Keat Hong
+        Community Club. Both buses will stop opposite of the SPCA.</p>
+    </div>
+
+    <div class="contact-item">
+      <mat-icon>access_time</mat-icon>
+      <p>
+        <strong>Adoption Viewing Hours:</strong> PetBuddy is closed for walk-ins until further notice.
+        Viewing sessions by appointment only, please
+        <a (click)="makeInquiry()">click here</a> to make an inquiry.
+      </p>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div #mapContainer style="height: 400px;"></div> -->
+  <div class="map-container">
+    <h2>How to get here</h2>
+    <mat-form-field appearance="outline">
+      <input #inputField matInput [placeholder]="originPlaceholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input #destination matInput [placeholder]="destinationPlaceholder">
+    </mat-form-field>
+    <br>
+
+    <button mat-button class="map-button" (click)="calculateDistance('DRIVING')"><mat-icon>directions_car</mat-icon>  Driving</button>
+    <button mat-button class="map-button" (click)="calculateDistance('WALKING')"><mat-icon>directions_walk</mat-icon> Walking</button>
+    <button mat-button class="map-button"(click)="calculateDistance('BICYCLING')"><mat-icon>directions_bike</mat-icon> Bicycling</button>
+    <button mat-button class="map-button"(click)="calculateDistance('TRANSIT')"><mat-icon>directions_transit</mat-icon>  Transit</button>
+    
+    <div *ngIf="distance && duration">
+      Distance: {{ distance }}<br>
+      Duration: {{ duration }}
+    </div>
+
+
+    <google-map width="100%" height="400px"  [center]="mapCenter">
+      <map-directions-renderer *ngIf="directionsResult" [directions]="directionsResult"></map-directions-renderer>
+    </google-map>
+
+  </div>
+</div>

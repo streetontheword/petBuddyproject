@@ -1,0 +1,59 @@
+
+<div class="site-wrapper">
+
+<div class="content-wrap">
+<div class="navbar">
+<mat-toolbar color="primary">
+    <img src="assets/logo.png" alt="Logo" style="height: 70px; margin-right: 10px;">
+    <!-- <span>Pet Buddy</span> -->
+    <span class="spacer"></span>
+    <button mat-button *ngIf="!isAdmin" [routerLink]="['/home']">Home</button>
+    <button mat-button  [routerLink]="['/forums']">Forum</button>
+
+    <button mat-button *ngIf="!isAdmin"   (click)="navigateToFAQSection()">About</button> 
+    <button mat-button *ngIf="!isAdmin" [routerLink]="['/contact']">Contact</button>
+    
+    <button mat-button *ngIf="isAdmin" [routerLink]="['/dashboard']">Dashboard</button>
+    <button mat-button *ngIf="isAdmin" [routerLink]="['/appointments']">Appointment</button>
+    <button mat-button *ngIf="isAdmin" [routerLink]="['/calendar']">Calendar</button>
+
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="!isAdmin">My Account</button>
+    <button mat-button [matMenuTriggerFor]="adminMenu" *ngIf="isAdmin">Admin</button>
+
+    
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/MyInfo', username]">My Info</button>
+        <button mat-menu-item [routerLink]="['/saved']">Saved Searches</button>
+        <button mat-menu-item [routerLink]="['/login']" (click)="logout()">Logout</button>
+    </mat-menu>
+    <mat-menu #adminMenu="matMenu" >
+        <button mat-menu-item [routerLink]="['/dogsforadoption']"> Manage Dogs</button>
+        <button mat-menu-item [routerLink]="['/addDog']"> Add Dog</button>
+        <button mat-menu-item [routerLink]="['/login']" (click)="logout()">Logout</button>
+
+
+        <!-- Add more admin-specific options here -->
+    </mat-menu>
+        <!-- Render notification component when user is logged in -->
+        <app-notifications></app-notifications>
+      
+</mat-toolbar>
+
+</div>
+<router-outlet></router-outlet>
+<!-- <button mat-button [routerLink]="['/mypets']">MyPets</button>
+<button mat-button [routerLink]="['/mypets']">My Account</button> -->
+</div>
+<footer>
+    <div class="footer-content">
+      <!-- Footer content goes here -->
+      <p>An organization committed to aiding stray and abandoned dogs in Singapore</p>
+      <nav>
+          <a href="/" class="footer-link">Home</a> |
+          <a (click)="navigateToFAQSection()" class="footer-link">About Us</a> |
+          <a [routerLink]="['/contact']" class="footer-link">Contact Us</a>
+      </nav>
+      <p>&copy; 2024 PetBuddy. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

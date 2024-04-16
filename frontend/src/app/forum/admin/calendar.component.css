@@ -1,0 +1,39 @@
+.mwl-calendar-week-view {
+    max-width: 100%; /* Ensure the calendar does not exceed the container width */
+    height: 400px; /* Adjust the height as needed */
+  }
+
+  
+
+  .calendar-container {
+  width: 80%; ;/* Adjust the width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  margin-bottom: 5%;
+}
+
+.cal-hour-segment {
+    height: 40px; /* Adjust the height as needed */
+  }
+  
+
+  .peru-button {
+    background-color: #CD853F; /* Peru color */
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 10%;
+    margin : 1%;
+  }
+
+
+  .confirmed-appointment{
+    text-align: center; /* Center align the content */
+    margin-top: 2%;
+    margin-bottom: 0;
+  }
+  
+  

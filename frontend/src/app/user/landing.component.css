@@ -1,0 +1,99 @@
+
+.login {
+    width: 420px;
+    background: transparent;
+    color: peru;
+    border-radius: 10px;
+    padding: 30px 40px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 170px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    
+}
+.login-container{
+    flex: 1;  /* Takes up half of the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically in the container */
+    align-items: center;  /* Centers horizontally in the container */
+    padding-left: 100px;
+    color: peru;  
+}
+
+h2{
+    margin-right: 9%;
+    font-size: 25px;
+}
+
+.login-page {
+    display: flex;
+    align-items: center; /* Aligns vertically */
+    justify-content: center; /* Aligns horizontally */
+    height: 100vh; /* Full viewport height */
+
+  }
+  
+  .login-container, .image-container {
+    flex: 1; /* Each takes half of the space */
+   
+   
+  }
+  
+  .image-container img {
+    width: 105%;
+    height:1000px; /* Maintain aspect ratio */
+    max-height: 100%; /* Optional to prevent overflow */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .login-page {
+      flex-direction: column;
+    }
+  }
+  
+  .password{
+    font-size: 20px;
+  }
+
+  .email{
+    font-size: 20px;
+  
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    padding-left: 6%;
+
+}
+
+.actions p {
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.full-width-input {
+    width: 80%;
+  
+   
+
+}
+
+.input{
+    padding-left: 8%;
+  
+}

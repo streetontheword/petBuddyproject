@@ -1,0 +1,61 @@
+
+.pet-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 25px;
+  margin-top: 3%;
+}
+
+
+.account-info-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+ 
+
+}
+
+
+.account-info-card {
+  width: 80%;
+  margin-top: 3%;
+}
+
+.info-card {
+  flex-grow: 1; /* Allow account info card to fill remaining space */
+  padding-top: 4%;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  width: 100px; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.info-value {
+  flex-grow: 1;
+}
+
+.display-picture {
+  margin-right: 20px; /* Adjust spacing between display picture and account info */
+}
+
+.display-picture img {
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 50%; /* Make the image round */
+}
+
+.account-info-container {
+  display: flex;
+}
+

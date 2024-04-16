@@ -1,0 +1,25 @@
+.forum-form {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 5%;
+  }
+  
+  .forum-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .title-field, .text-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .peru-button {
+    margin-left: 2%;
+    background-color: peru;
+    color: white; /* Optionally, change text color to contrast with the background */
+  }
+
+  .actions{
+    margin-bottom:6%;
+  }

@@ -1,0 +1,32 @@
+
+<div class="forum-form">
+    <h1>Create A New Thread</h1>
+    <h3>Welcome! Let's ensure our community stays pet-focused and respectful! Please refrain from using any inappropriate language. Thank you for your understanding!</h3>
+    <h3><strong> ** Remember, our forum isn't just a place for discussion—it's a platform where each member has the power to make a difference. If you spot a stray dog, don't hesitate to share the details with the community. ***</strong>
+    <ul>
+      <li>Change title of post to HELP! DOG SPOTTED</li>
+      <li>Location of the dog</li>
+      <li>Description of the dog</li>
+      <li>A way to contact you</li>
+    </ul>
+  <p>Admin will check forum frequently, but members can also step up to help!  </p></h3>
+    
+    <form [formGroup]="forumForm" (submit)="submitThread()">
+      <mat-form-field appearance="outline" class="title-field">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title" placeholder="SOS, I am a new pawrent!!!">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="text-field">
+        <mat-label>Text</mat-label>
+        <textarea matInput type="text" formControlName="text" rows="6" placeholder="Hi, I have a 5 month old puppy, and I am wondering if kibbles are good for him"></textarea>
+      </mat-form-field>
+      
+      <div class="actions">
+      <button mat-raised-button style="background-color: #800000; color: white;"[routerLink]="['/forums']" type="button">Back</button>
+      <button mat-raised-button class="peru-button" type="submit" [disabled]="forumForm.invalid"  >Submit</button>
+      </div>
+      
+    </form>
+  </div>
+  

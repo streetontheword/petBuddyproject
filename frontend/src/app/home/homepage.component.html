@@ -1,0 +1,232 @@
+<div class="banner-container">
+  <img class="banner-image" src="assets/labdog.jpeg" alt="Banner Image">
+  <h1><strong>Be the compassionate heart that welcomes and cares for those in need</strong></h1>
+  <button mat-raised-button class="banner-button" [routerLink]="['/adoption']">Adopt Now</button>
+</div>
+
+
+
+<div class="container">
+  <h1>How you can help</h1>
+  <mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile>
+      <div class="grid-item">
+        <h3>Adopt</h3>
+        <p>Thinking of getting a dog? View the many reasons why you should adopt one of these
+          wonderful dogs who will provide a lifetime of love and joy! #AdoptDontShop</p>
+        <button mat-raised-button class="peru-button" [routerLink]="['/adoption']">Learn More</button>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="grid-item">
+        <h3>Donate</h3>
+        <p>Sponsoring a Pet is a way for you to help homeless pets even if you can’t adopt.
+          By donating though our secure payment system, you can help an adoption group care for a specific pet
+          while he or she waits to be adopted.</p>
+        <button mat-raised-button class="peru-button" (click)="navigateToDonationSection()" >Donate Now</button>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="grid-item">
+        <h3>Pet Adoption FAQs</h3>
+        <p>Get answers to all the questions that you have about adopting one of our adorable companions into your life!
+        </p>
+        <button mat-raised-button class="peru-button" (click)="navigateToFAQSection()">Learn More</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="FAQS" id="faq-sectionaboutPB">
+  <h1>Frequently Asked Questions About PetBuddy!</h1>
+
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="firstQn">Who are we?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>We are a passionate group of dog lovers who share a deep concern for the welfare of stray dogs in our
+          community. Witnessing the plight of these abandoned animals inspired us to take action. Recognizing the need
+          for a dedicated platform to facilitate dog adoption and connect loving homes with deserving dogs, we came
+          together to create this website.</p>
+        <p>Our mission is to provide a safe and loving environment for stray dogs, offering them a second chance at
+          finding a forever home. Through our collective efforts, we aim to reduce the number of homeless dogs and
+          promote responsible pet ownership.</p>
+        <p>With our organisation, we hope to raise awareness about the importance of adoption and the joy that rescue
+          dogs
+          can bring to families. Together, we can make a difference in the lives of these animals and create a brighter
+          future for them.</p>
+      </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="thirdQn">What is the adoption process?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>Do head over <a (click)="navigateToFAQSection()">here</a> for our adoption FAQs!</p>
+      </div>
+    </mat-expansion-panel>
+
+
+
+
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="secondQn">Do you perform Dog rescues?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>Short answer: Yes!</p>
+        <p>Long answer: It is really a case to case basis, we are a small group of volunteers and do not have the
+          resources to answer to every call. </p>
+        <p>However, our hope is that with the help of the forum, the members of this community will step up and help
+          each other in the rescuing process</p>
+        <p>BUT, if you do see a stray, we have a brief, handy set of tips to help you assess the situation and decide on
+          your next course of action, so do have a read first! </p>
+        <ul>
+          <p><strong>1. Access the urgency of the situation</strong></p>
+          <li>Seeing an unattended dog roaming in public is like seeing a fish out of water. Your protective instincts
+            may implore you to help it, but you want to make sure that you are not unintentionally making the situation
+            worse. For instance, if you see a dog stuck in traffic, running after the dog could put you, surrounding
+            pedestrians and passing motorists in great danger. In this case, it might be safer to wait until the dog is
+            in a safe place before providing assistance. Conversely, if a dog is already in a safe place, approaching or
+            chasing might scare the dog and unwittingly place it in a dangerous situation. Only if the dog is in need of
+            help and your surroundings are safe, should you proceed on your path to animal heroism. Most of the time,
+            unless the dog is injured, it IS better to leave them alone.</li>
+          <p><strong>2. Determine ownership</strong></p>
+          <li>Before you whisk a dog away to safety, ensure that the dog is actually alone and not simply separated
+            momentarily from its owner. You can save yourself a lot of time and hassle, avoid potential criminal charges
+            and distress for all parties involved by making sure the dog is alone.</li>
+          <p><strong>3. Analyze the condition of the dog</strong></p>
+          <li>Dogs on the street generally fall into one of two categories: a dog that has been separated from its
+            owner,
+            or a stray dog without a home or loving family. Though all dogs are worthy of love and can be in need of
+            rescuing, there are additional concerns that must be taken into consideration when attempting to rescue a
+            stray. The risk of becoming infected with a disease is much greater if you get bitten by a dog that has not
+            received shots, as many stray dogs have not. Thus, you should be especially cautious when dealing with a
+            stray.</li>
+          <p><strong>4. Secure the dog</strong></p>
+          <li>Since the ultimate goal is to get the dog in your possession, you must develop a relationship with it
+            first
+            — try gaining its trust by making a peace offering. A simple gesture like
+            presenting food can build trust and open the lines of communication between man and beast.</li>
+          <li>If the dog is now comfortable with you, place a leash or a rope around its neck. Should you not have
+            anything that can be used as a leash, a well-ventilated box or anything that can be made into a carrier will
+            help you transport the dog safely.</li>
+          <li>If the dog is still behaving with a bit of hostility, you can simply place a barrier around the dog to
+            keep
+            it there while you locate help</li>
+          <p><strong>5. Bring it to the vet</strong></p>
+          <li>Once you’ve managed to restrain the dog for its own safety, you can begin the process of returning it to
+            its
+            rightful owner or finding it a new one if one does not exist. Nowadays, many owners are getting microchips
+            placed beneath the skin of their dogs as a means of tracking their four-legged loved ones. Checking the
+            dog’s
+            microchip will be the first thing they do if you bring a stray dog into any veterinary clinic or the Humane
+            Society. If it’s determined that the dog has an owner, he or she will be notified and your job is done.</li>
+          <p><strong>6. Provide it with shelter</strong></p>
+          <li>Help foster your newfound friend while you try to locate its owner or find it a loving family — or adopt
+            him/her, if you’ve already fallen irrevocably in love! Before taking the dog to an animal-welfare group,
+            consider that these organisations are often stretched to their limits with other rescues and existing
+            residents.</li>
+          <li>You may contact us, however, as space resources are limited, once they are full, we cannot take in anymore
+            unless some of the dogs are adopted. Our mode of operation is more of a collaborative one, where the rescuer
+            has to help us hold the dog temporarily, then we can start the rehoming process.</li>
+        </ul>
+      </div>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="thirdQn">Can I contribute content?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>Definitely! That is why we have the forum page for dog lovers exactly for this purpose!</p>
+        <p>Join thousands of fellow dog lovers to discuss various topics such as:</p>
+        <ul>
+          <li>Dog breeds: Learn about different breeds, their characteristics, and which one might be the perfect fit
+            for your lifestyle.</li>
+          <li>Training and behavior: Share tips, advice, and experiences on training your dog and addressing behavior
+            issues.</li>
+          <li>Health and nutrition: Discuss topics related to dog health, nutrition, vaccinations, and preventive care.
+          </li>
+          <li>Grooming and care: Exchange grooming tips, advice on grooming products, and best practices for keeping
+            your dog clean and healthy.</li>
+        </ul>
+        <p><strong> ** Remember, our forum isn't just a place for discussion—it's a platform where each member has
+            the power to make a difference. If you spot a stray dog, don't hesitate to share the details with the
+            community. ***</strong>
+        </p>
+      </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="firstQn">Why do we have to include the information of our personal pets?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <ul>
+          <p>1. One of the reason is for the purpose of transparency. As an organisation, PetBuddy will require PetBuddy
+            requires users to provide details about their personal pets because this information helps us understand the
+            environment the adopted dog will be entering.</p>
+          <li> It will act as a preliminary understanding of the backgroun of the adopters. However, a thorough check will
+            still be conducted to ensure that our dog is compatible with you!</li>
+            <br>
+            <p>2 . Plus, it gives us the perfect excuse to ooh and aah over adorable photos of your furry friends!</p>
+        </ul>
+
+        
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="thirdQn">I see a donation option. What is it for, and how can I be sure that my contribution will
+            directly benefit the animals?</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <ul>
+          <li>
+            By making a donation to PetBuddy, you're directly contributing to the well-being and future
+            happiness of dogs who have been abandoned, neglected, or mistreated. Your support helps us cover the costs
+            of
+            veterinary care, vaccinations, spaying/neutering, microchipping, and other necessary expenses to ensure that
+            each dog receives the care and attention they deserve.
+
+            Every donation, no matter the size, makes a difference and helps us continue our lifesaving work. We are
+            deeply grateful for your generosity and commitment to making a positive impact in the lives of these
+            deserving
+            animals.
+
+            Together, we can give every dog a chance for a better life. Thank you for your support.</li>
+
+          <li>PetBuddy's financial accounts are audited yearly by a Certified Public Accountant and sent to the IRAS and
+            ROS
+            (Registry of Societies) for auditing as well. Society members get a copy of the annual report which details
+            the financial operations of PetBuddy for that year. The financial report also gives a breakdown of the
+            expenses,
+            and it can be seen that the majority of the expenses are spent on medical, boarding, transport which
+            directly
+            benefit the animals and costs like salaries, administrative expenses are kept to a minimum.</li>
+        </ul>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

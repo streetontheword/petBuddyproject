@@ -1,0 +1,14 @@
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 16px; /* Add some margin from the content */
+  }
+  
+  .save-button {
+    margin-right: 8px; /* Add some spacing between the Save and Cancel buttons */
+  }
+  
+  .cancel-button {
+    /* You can add additional styles for the Cancel button */
+  }
+  

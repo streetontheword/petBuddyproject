@@ -1,0 +1,97 @@
+<div *ngFor="let d of dogDetails">
+  
+  <div class="container">
+    <div class="inner-container">
+      <button mat-button [routerLink]="['/dogsforadoption']">
+        <mat-icon style="font-size: 20px;">arrow_back</mat-icon>
+      </button>
+  <div *ngFor="let d of dogDetails">
+    <!-- Picture div -->
+    <div class="picture">
+      <img [src]="d.url" alt="{{ d.name }}" height="500px" width="400px">
+      
+      <!-- Dog container div -->
+      <div class="inquiry-container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Considering {{d.name}} for adoption? </mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button (click)="openDialog()">START YOUR INQUIRY</button>
+            <button mat-button (click)="navigateToFAQSection()">READ FAQS</button>
+          </mat-card-actions>
+          <mat-grid-list cols="2" rowHeight="4:1">
+            <mat-grid-tile>
+              <button mat-button [routerLink]="['/checkout']">SPONSOR</button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button mat-button (click)="addToFavorite()"><mat-icon>favorite</mat-icon>
+              </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+    
+      </div>
+    </div>
+        
+        <div class="dog-container">
+          <h1><strong>{{d.name}}</strong></h1>
+          <p><strong>Name:</strong> {{d.name}}</p>
+          <p><strong>Breed/s:</strong> {{d.primaryBreed}}, {{d.secondaryBreed}}
+            <p *ngIf="d.isMixed">Mixed</p>
+            <p *ngIf="d.isUnknown">Unknown</p>
+            <p><strong>Gender:</strong> {{d.gender}}</p>
+            <p><strong>Age: </strong>{{d.age}} </p>
+            <p><strong> Size:</strong> {{d.size}} </p>
+            
+            <div *ngFor="let color of d.color">
+              <div *ngIf="color!= null">
+                <p><strong>Color:</strong> {{color}}</p>
+              </div>
+            </div>
+            
+            
+            <p><strong>Puppy Personality Traits:</strong> {{d.characteristics}}</p>
+            
+            
+            
+            <br>
+            <h2>About {{d.name}}</h2>
+            <p>Looking for a home since {{d.published | date}}</p>
+            
+            <h2>Good in a home with</h2>
+            <p *ngIf="d.isGoodWithCats">Cats</p>
+            <p *ngIf="d.isGoodWithDogs">Dogs</p>
+            <p *ngIf="d.isGoodWithChildren">Children</p>
+            <br>
+            <h2>Health</h2>
+            <p *ngIf="d.isHouseTrained">House Trained</p>
+            <p *ngIf="d.isSpayedAndNeutered">Spayed & Neutered</p>
+            <p *ngIf="d.isSpecialNeeds">Special Needs</p>
+            <p *ngIf="d.isVaccinated">Vaccinations up to date</p>
+            <p *ngIf="d.isVaccinated === false">Not Vaccinated</p>
+            <p *ngIf="d.isDeclawed">Declawed</p>
+            
+            
+            <br>
+            <h2>Meet {{d.name}}</h2>
+            <p>{{d.description}}</p>
+            
+            <h2>IF YOU ARE INTERESTED IN ADOPTING THIS DOG, PLEASE MAKE SURE YOU HAVE READ THE DOG'S INFORMATION CAREFULLY.
+              ONCE YOU HAVE DONE SO, PLEASE DO THE FOLLOWING:</h2>
+              <p> 1. Make an inquiry for a bonding session</p>
+              <p> 2. Please wait for a confirmation in approximately 48 hours on weekdays.</p>
+            </div>
+            <!-- Rest of the dog information -->
+          </div>
+        </div>
+        
+        
+      </div>
+
+
+
+
+
+
+

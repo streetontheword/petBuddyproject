@@ -1,0 +1,62 @@
+
+<div class="centered">
+<div class="top-section">
+  <div class="paginator">
+    <button mat-button [routerLink]="['/adoption']">
+      <mat-icon style="font-size: 20px;">arrow_back</mat-icon>
+    </button>
+    <mat-paginator [pageIndex]="currentPage" [length]="totalItems" [pageSize]="pageSize" (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+
+  <div class="filter">
+    <mat-form-field appearance="fill">
+      <mat-label>Select a gender</mat-label>
+      <mat-select [(value)]="selectedOption" (selectionChange)="onSelectionChange($event)">
+        <mat-option *ngFor="let option of options" [value]="option.value">
+          {{ option.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button class="peru-button" (click)="resetField()">RESET Search</button>
+  </div>
+
+  <div class="search-bar">
+
+    <form [formGroup]="searchBar" class="search-form">
+      <mat-form-field class="search-input" appearance="fill">
+        <input matInput placeholder="Search For Name" formControlName="search">
+        <button mat-button matSuffix color="primary" (click)="processSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-button matSuffix color="warn" (click)="clearSearch()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+    
+  </div>
+</div>
+</div>
+<div class="dog-container">
+  <div class="dog-card" *ngFor="let d of dogArray">
+    <mat-card class="custom-card">
+      <!-- Display dog name -->
+      <h2>{{ d.name }}</h2>
+
+      <!-- Display dog image -->
+      <img [src]="d.url" alt="{{ d.name }}"  class="dog-image">
+      
+      <!-- Display dog description -->
+      <p class="description">{{ d.description }}</p>
+      
+      <!-- Display dog breeds -->
+      <p class="details">Breeds: {{d.primaryBreed}}, {{d.secondaryBreed}}</p>
+      <p class="details">Gender: {{d.gender}}</p>
+      <button type="button" [routerLink]="['/dogsforadoption', d.id]" class="learn-more-button ">Learn More</button>
+      <div class="deletebutton">
+        <button mat-button color="warn" *ngIf="isAdmin" (click)="deletePost(d.id)">Delete</button>
+        </div>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2%;
+  }
+  
+  .pet-card {
+    width: 300px;
+  }
+  
+  .pet-card img {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image covers the entire space */
+  }
+  
+  .fab-container {
+    position: fixed;
+    bottom: 150px;  /* Increased from 20px for more visible space */
+    right: 60px;   /* Increased from 20px for more visible space */
+    z-index: 1000;  
+  }
+  .fab-container a {
+    background-color: maroon; /* Example: a bright blue color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for better visibility */
+
+  }
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }

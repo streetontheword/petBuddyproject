@@ -1,0 +1,71 @@
+<!-- <div class="login-page">
+    <div class="image-container">
+        <img src="assets/loginpage.jpg" alt="Descriptive Alt Text">
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form [formGroup]="form" (submit)="processForm()">
+            <table>
+                <tr>
+                    <td class="email">Email:</td>
+                    <div class="email-container">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Email">
+                        <mat-error *ngIf="form.controls['email'].hasError('required')">Email is required</mat-error>
+                    </mat-form-field>
+                </div>
+                </tr>
+                <tr>
+                    <td class="password">Password:</td>
+                    <div class="password-container">
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                            formControlName="password">
+                        <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility' :
+                            'visibility_off'}}</mat-icon>
+                    </mat-form-field>
+                </div>
+                </tr>
+                <button mat-button type="button" (click)="reset()">Clear</button>
+                <button mat-button type="submit" [disabled]="form.invalid">Login</button>
+                
+                <p>New to PetBuddy?<a [routerLink]="['/registration']">Join now</a></p>
+                
+            </table>
+            <br>
+        </form>
+    </div>
+</div> -->
+
+<div class="login-page">
+    <div class="image-container">
+        <img src="assets/loginpage.jpg" alt="Login Page Background">
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form [formGroup]="form" (submit)="processForm()" class="form">
+            <div class="input">
+            <mat-form-field appearance="fill" class="full-width-input">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email">
+                <mat-error *ngIf="form.controls['email'].hasError('required')">Email is required</mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width-input">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                    formControlName="password">
+                <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            
+            </mat-form-field>
+        </div>
+            <div class="actions">
+                <button mat-button type="button" (click)="reset()">Clear</button>
+                <button mat-button type="submit" [disabled]="form.invalid">Login</button>
+                <p>New to PetBuddy?<a [routerLink]="['/registration']">Join now</a></p>
+            </div>
+        </form>
+    </div>
+</div>

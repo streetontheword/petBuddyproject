@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="mat-display-2">{{notificationArray.length}} Unread Notifications</h2>
+
+    <div *ngIf="notificationArray.length > 0" class="notification-container">
+        <mat-card class="notification-card" *ngFor="let n of notificationArray, index as i">
+            <mat-card-content>
+                <div class="notification-content" (click)="readNotification(n, i)" [ngClass]="n.read ? 'read' : 'unread'">
+                    <div class="text">
+                        {{ n.text }}
+                    </div>
+                    <div class="timestamp">
+                        {{ n.timestamp | date:"dd MMM yyyy, HH:mm" }}
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngIf="notificationArray.length === 0">
+        <p>Looks like the notification elves are on vacation! Nothing to see here.</p>
+    </div>
+
+</div>

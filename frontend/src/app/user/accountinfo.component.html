@@ -1,0 +1,48 @@
+<div *ngIf="user" class="account-info-page">
+
+  <mat-card class="account-info-card">
+    <mat-card-header>
+      <mat-card-title>My Account Information</mat-card-title>
+    </mat-card-header>
+
+    <div class="account-info-container">
+      <div class="display-picture">
+        <img [src]="user.url" alt="Profile Picture">
+        <mat-card-actions>
+          <button mat-button (click)="openDialog()">Edit</button>
+        </mat-card-actions>
+      </div>
+    
+      <mat-card class="info-card">
+        <mat-card-content>
+          <div class="info-item">
+            <mat-icon class="info-icon">favorite</mat-icon>
+            <div class="info-label">Username:</div>
+            <div class="info-value">{{ user.userName }}</div>
+          </div>
+          <div class="info-item">
+            <mat-icon class="info-icon">email</mat-icon>
+            <div class="info-label"> Email:</div>
+            <div class="info-value">{{ user.email }}</div>
+          </div>
+          <div class="info-item">
+            <mat-icon class="info-icon">person</mat-icon>
+            <div class="info-label">First Name:</div>
+            <div class="info-value">{{ user.firstName }}</div>
+          </div>
+          <div class="info-item">
+            <mat-icon class="info-icon">person</mat-icon>
+            <div class="info-label">Last Name:</div>
+            <div class="info-value">{{ user.lastName }}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card>
+
+</div>
+
+
+  
+  <h2 class="pet-list">Your current pets:</h2>
+  <app-petsummary></app-petsummary>

@@ -1,0 +1,26 @@
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Edit Pet's Picture</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+     
+        <form [formGroup]="editDP">
+        <div class="upload-file-container">
+            <mat-label>Picture:</mat-label>
+            <br>
+            <input type="file" formControlName="image" accept="image/*" #file>
+        </div>
+    </form>
+    </mat-card-content>
+    <mat-card-actions class="button-container">
+        <!-- Button to save the changes -->
+        <button mat-raised-button color="primary" class="save-button" (click)="onSave()">Save</button>
+        <!-- Button to cancel -->
+        <button color="warn" mat-button mat-dialog-close>Cancel</button>
+        
+
+      </mat-card-actions>
+      
+  </mat-card>
+  

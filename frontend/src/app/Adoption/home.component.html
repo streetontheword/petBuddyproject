@@ -1,0 +1,118 @@
+<!-- 
+<h1>hello</h1>
+<div *ngFor="let d of dogArray">
+
+
+Name: {{d.name}}
+<br>
+<img [src]="d.url" alt="">
+<br>
+Description: {{d.description}}
+
+Breeds : {{d.breeds}}
+
+
+
+</div> -->
+<div class="banner-container">
+  <img class="banner-image" src="assets/galleryphoto.jpeg" alt="Banner Image">
+  <h1><strong>Adoption</strong></h1>
+</div>
+
+
+
+<div class="gallery">
+
+  <div class="content">
+    <h1>Adoption Gallery</h1>
+
+    <h3>Thank you for your interest in adopting an animal! All visits are now by appointment only </h3>
+    <h3>If you have any questions, please head to our frequently asked questions (FAQs) section! </h3>
+
+    <button mat-raised-button class="peru-button" [routerLink]="['/dogsforadoption']">Paws-itively Adorable
+      Display</button>
+
+  </div>
+  <div class="picture-container">
+
+    <img src="assets/adoption.jpeg" alt="girl with dog">
+  </div>
+</div>
+
+
+<div class="FAQS" id="faq-section">
+  <h1>Frequently Asked Questions Regarding Adoption</h1>
+
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="firstQn">How to adopt</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>1. Browse our tail-wagging gallery</p>
+        <p>2. Make an inquiry and answer all the fields</p>
+        <p>3. Wait for the confirmation email and arrive promptly for your appointment</p>
+        <ul>
+          <li>Please present your ID or show the confirmation email at the PetBuddy for verification purposes.
+            If the adoption counselling and interactions between the animal goes well (and find that the animal is a
+            good
+            fit for your family),
+            you may adopt the animal on the spot when you visit PetBuddy; you will need documents showing your address
+            and
+            your passport / FIN. Please note that we do not have any reservation policy and are only able to hold the
+            animal for 3 days after your initial adoption counselling, where our adoption counsellors approve the
+            adoption.</li>
+          <li>The whole procedure should not take more than an hour.</li>
+        </ul>
+        <p>For further clarifications, please email <a
+            href="mailto:petbuddy2024@gmail.com">petbuddy2024&#64;gmail.com</a></p>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="secondQn">Things to take note</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>Due to the high volume of adoption requests and limited manpower and resources,
+          we seek your understanding if the animal of your choice is adopted before your appointment date. Adopted
+          animals will be removed from the gallery.</p>
+        <ul>
+          <li>We will conduct thorough interviews with potential owners to make sure we find the right match for our
+            animals</li>
+          <li>Priority will be given to those who apply first</li>
+          <li>If you can’t find a suitable companion at the time of viewing, please revisit the site as we update
+            frequently.</li>
+          <li>We do NOT have a reservation policy or dedicated service for informing people when a specific animal or
+            breed is available</li>
+        </ul>
+        <p>For further clarifications, please email <a
+            href="mailto:petbuddy2024@gmail.com">petbuddy2024&#64;gmail.com</a></p>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="thirdQn">Adoption Fee</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="answer">
+        <p>Singapore Specials – Local Mixed Breed Puppies (Under 6 months) : $250</p>
+        <p>Singapore Specials – Local Cross Breed Adults (6 months to under 7.5 years)
+          $150</p>
+        <p>Pedigrees and Crosses (Under 7.5 years)
+          $350</p>
+        <p>Seniors (Above 7.5 years OR stayed in SPCA for over a year)
+          $70</p>
+        <p>Dogs with Special Needs OR require Long Term Medical Care
+          $25</p>
+          <p>***Fees cover vaccination, sterilisation, deworming and microchipping with registration. Price excludes AVS dog licensing fee.***</p>
+        <p>For further clarifications, please email <a
+            href="mailto:petbuddy2024@gmail.com">petbuddy2024&#64;gmail.com</a></p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

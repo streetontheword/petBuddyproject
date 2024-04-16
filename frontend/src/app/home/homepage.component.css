@@ -1,0 +1,131 @@
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    height: 200px; /* Set a fixed height for each grid item */
+  }
+  
+  .grid-item h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .grid-item p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .container {
+    background-color: whitesmoke;
+    height: 300px; /* Set a fixed height for the grid tiles */
+    padding: 5px;
+   
+  }
+  
+  .container h1{
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+
+  }
+  .banner-container {
+    position: relative;
+    width: 100%;
+    background-color: whitesmoke;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto; /* Adjust the height according to your image aspect ratio */
+  }
+  
+  .banner-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    font-size: 20px; /* Adjust the font size as needed */
+    padding: 30px 50px; /* Adjust padding to increase button size */
+    transform: translate(-50%, -50%);
+    background-color: peru; /* Button background color */
+    color: white; /* Button text color */
+  }
+  
+  .banner-container h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-size: 300%;
+   
+  }
+  .peru-button {
+    background-color: peru;
+    color: white; /* Optionally, change text color to contrast with the background */
+  }
+
+  .FAQS {
+
+    padding: 30px;
+    background-color: #f5f5f5;
+    height: auto;
+    width: auto;
+  }
+  
+  .FAQS h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .firstQn{
+    color: navy;
+    font-size: 20px;
+    padding-top:10px;
+    width: 100%;
+  }
+  
+  
+  .secondQn{
+    color: navy;
+    font-size: 20px;
+    padding-top:10px;
+    width: 100%;
+  
+  }
+  
+  .thirdQn{
+    color: navy;
+    font-size: 20px;
+    padding-top:10px;
+    width: 100%;
+  }
+  
+  .answer {
+    padding: 10px;
+  }
+  
+  
+  
+  .answer p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .answer ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .answer a {
+    color: peru;
+    text-decoration: none;
+  }
+  
+  .answer a:hover {
+    text-decoration: underline;
+  }
+  

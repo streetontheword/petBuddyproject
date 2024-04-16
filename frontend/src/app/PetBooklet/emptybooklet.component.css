@@ -1,0 +1,83 @@
+.pets-title {
+    color: #2a2a2a; /* Dark grey color for the text */
+    text-align: center; /* Centers the text */  
+    font-size: 18px;
+    
+  }
+  
+  .field {
+    margin-bottom: 20px; /* Adjust the value as needed */
+  }
+  
+  /* Style for the mat-dialog-content */
+  mat-dialog-content {
+      max-height: 80vh; /* Set a maximum height for the dialog content */
+      overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    }
+    
+    /* Style for the form fields */
+    mat-form-field {
+      width: 100%; /* Set the width of the form fields */ 
+      padding: 7px;
+    }
+    
+    /* Style for the input fields */
+    input.mat-input {
+      width: 100%; /* Set the width of the input fields */
+    }
+    
+    /* Style for the buttons */
+    mat-dialog-actions button {
+     
+      margin-right: 10px; /* Add right margin for spacing between buttons */
+      margin-right: 10px; /* Add right margin for spacing between buttons */
+      border-radius: 10px;
+      padding: 10px;
+    }
+    
+    /* Style for the rows */
+    .row {
+      display: flex; /* Use flexbox for row layout */
+      justify-content: space-between; /* Space elements evenly within the row */
+      margin-bottom: 20px; /* Add bottom margin for spacing between rows */
+    }
+    
+    /* Style for the datepicker */
+    mat-datepicker-toggle {
+      margin-top: 20px; /* Add top margin for spacing */
+    }
+   
+    /* Style for the actions container */
+    .actions-container {
+      margin-top: auto; /* Add space between the form and the buttons */
+      display: flex;
+      justify-content:right; /* Align buttons to the right */
+      position: absolute;
+      bottom: 0; /* Stick to the bottom */
+      width: 100%; /* Make container full width */
+    }
+    
+    /* Style for the buttons */
+    .actions-container button {
+      margin-right:50px; /* Add right margin for spacing between buttons */
+      border-radius: 10px;
+      padding: 20px;
+    }
+  
+    .checkbox{
+     width: 100%;
+     padding-top: 10px;
+    }
+    
+  .dog-container{
+    padding: 20px;
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  .upload-file-container{
+    width: 100%;
+  }
+  
+  
+   

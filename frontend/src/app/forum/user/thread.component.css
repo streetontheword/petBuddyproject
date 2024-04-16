@@ -1,0 +1,79 @@
+.thread-card {
+  margin-bottom: 20px; /* Add margin between each thread card */
+ 
+}
+
+
+.comments-container {
+  margin: auto ; /* Add margin above the comments section */
+  width: 100%;
+  
+}
+.post-container{
+  border: 2px solid maroon;
+  width: 70%;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto ;
+}
+.comment {
+ 
+  border: 2px solid maroon;
+  border-radius: 20px; /* Add border radius to comments */
+  padding: 10px; /* Add padding to comments */
+  margin: 20px auto; /* Add margin between each comment */
+  width: 60%;
+ 
+}
+
+.mat-icon {
+  vertical-align: middle; /* Align the icon vertically with the text */
+  margin-right: 1px; /* Add some space between the icon and the username */
+  font-size: 19px; /* Set the font size of the icon (adjust as needed) */
+}
+  
+.thread-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* background-image: url('https://cdn-icons-png.flaticon.com/512/4775/4775486.png'); Placeholder image URL */
+  background-size: cover; /* Ensure the image covers the entire avatar */
+  background-position: center; /* Center the image within the avatar */
+  margin-right: 20px;
+  padding-bottom: 10px;
+}
+
+.thread-avatar img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* background-image: url('https://cdn-icons-png.flaticon.com/512/4775/4775486.png'); Placeholder image URL */
+  background-size: cover; /* Ensure the image covers the entire avatar */
+  background-position: center;
+
+}
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border: 3px solid maroon; /* Border style */
+    padding: 20px; /* Optional: Add padding for better appearance */
+    border-radius: 20px;
+    margin: 0 auto; 
+  }
+  
+  .comment-input {
+    width: 60%;
+      
+  }
+  
+  button[type="submit"] {
+    width: 200px;
+    margin-top: 10px;
+  }
+  
+  .icon-small {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  

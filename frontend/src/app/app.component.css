@@ -1,0 +1,80 @@
+
+
+/* Toolbar Styles */
+mat-toolbar {
+  background-color: peru;
+  /* Sage green */
+  color: white;
+  /* Text color */
+  height: 75px;
+}
+
+/* Menu Button Styles */
+mat-button {
+  color: white;
+  /* Button text color */
+}
+
+/* Menu Item Styles */
+.mat-menu-item {
+  color: #333;
+  /* Menu item text color */
+}
+
+/* Menu Hover Styles */
+.mat-menu-item:hover {
+  background-color: #8A6E60;
+  /* Taupe */
+}
+
+/* Spacer Styles */
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+
+/* This ensures the page takes up at least full viewport height */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Pushes the footer to the bottom and allows content to expand */
+.content-wrap {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background-color: #f8f9fa;
+  /* Light grey background */
+  padding:16px;
+  text-align: center;
+
+  /* Optional: adds shadow for floating effect */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.footer-content p {
+  font-size: 16px;
+  margin-top: 1%;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index:10;
+}
+
+.footer-link {
+  color: maroon;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 15px;
+}

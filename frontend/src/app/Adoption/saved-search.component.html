@@ -1,0 +1,33 @@
+
+
+<h1>LIKES</h1>
+
+<div class="dog-container" *ngIf="retrieveFavoriteList.length > 0; else noFavorites">
+  <div class="dog-card" *ngFor="let d of retrieveFavoriteList">
+    <mat-card class="mat-elevation-z5">
+      <!-- Dog image (if available) -->
+      <img *ngIf="d.url" [src]="d.url" alt="{{ d.name }}" class="dog-image">
+
+      <mat-card-content>
+        <!-- Dog name -->
+        <h2>{{ d.name }}</h2>
+        
+        <!-- Dog gender -->
+        <p>Gender: {{ d.gender }}</p>
+
+        <!-- Dog breeds -->
+        <p>Breeds: {{ d.primaryBreed }}</p>
+
+        <button type="button" [routerLink]="['/dogsforadoption', d.petId]" class="learn-more-button">Learn More</button>
+        <button type="button" (click)="deletePet(d.petId)" class="deleteButton">Delete</button>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #noFavorites>
+  <div class="no-favorites-message">
+  <p>Oops! It looks like you haven't favorited any dogs yet. Why not explore our furry friends and find your new best friend?</p>
+</div>
+</ng-template>

@@ -1,0 +1,126 @@
+/* Styling for the card */
+mat-card {
+  width: 400px;
+  /* Set the desired width */
+  margin: 10px;
+  /* Add margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: navajowhite;
+  /* Add a subtle box shadow */
+
+
+
+}
+
+
+
+
+.picture-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+
+}
+
+
+
+.picture img {
+  border-radius: 10px;
+  margin-left: 20%;
+
+}
+
+/* Adjust styling for dog container as needed */
+.dog-container {
+  flex: 1;
+  margin-left: 400px;
+  width: 40%;
+  position: absolute;
+  top: 0;
+  left: 50%; /* Adjust as needed */
+  transform: translateX(-50%); /* Center the container horizontally */
+  max-height: calc(100vh - 100px); /* Adjust the value according to your footer height */
+  overflow-y: auto; /* Add scroll if content exceeds the max height */
+  z-index: 1;
+}
+
+.dog-container h1 {
+  color: burlywood;
+  font-size: 40px;
+}
+
+
+/* Styling for the card title */
+.mat-card-title {
+  font-size: 30px;
+  /* Set the font size */
+  font-weight: bold;
+  /* Set the font weight */
+}
+
+/* Styling for the card actions */
+mat-card-actions {
+  display: grid;
+  /* Use flexbox for horizontal alignment */
+  justify-content: space-around;
+  /* Distribute buttons evenly */
+}
+
+/* Styling for the card action buttons */
+mat-card-actions button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  /* Add padding to the buttons */
+  border: none;
+  /* Remove border */
+  border-radius: 15px;
+  /* Add border radius */
+  background-color: peru;
+  /* Set background color */
+  color: #fff;
+  /* Set text color */
+  cursor: pointer;
+  /* Change cursor on hover */
+  transition: background-color 0.3s;
+  /* Add transition effect */
+}
+
+mat-grid-tile button {
+  background-color: navajowhitebeige;
+  width: 100%;
+
+
+}
+
+/* Hover effect for the card action buttons */
+mat-card-actions button:hover {
+  background-color: #0056b3;
+  /* Change background color on hover */
+}
+
+.inquiry-container {
+
+  position: relative;
+  width: 40%;
+  margin-left: 18%;
+
+
+}
+
+
+.container{
+  position: relative;
+  justify-content: space-between;
+  margin-top: 5%;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.inner-container{ 
+  width: 35%;
+  margin-left: 15%;
+}

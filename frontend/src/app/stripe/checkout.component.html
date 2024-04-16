@@ -1,0 +1,44 @@
+<div class="banner-container" id="donation-picture">
+  <img class="banner-image" src="assets/donation.jpeg" alt="Banner Image">
+  <h1><strong>Donate Now</strong></h1>
+</div>
+
+
+<div class="donation-container">
+<div class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <h1>PetBuddy needs your help! </h1>
+     
+    </mat-card-header>
+
+<form [formGroup]="donationForm" (submit)="pay()">
+    <p>You may make a donation below, of which no amount
+        is too small.</p>
+    
+    <div class="input">
+        <mat-form-field appearance="outline" >
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Please enter your name">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" >
+          <mat-label>Amount</mat-label>
+          <input matInput paymentAmount = amount formControlName="amount" placeholder="Please enter amount">
+        </mat-form-field>
+      </div>
+
+    <div class="actions">
+      <button type="submit" mat-raised-button color="primary" [disabled]="donationForm.invalid">
+        Donate ${{ donationForm.value['amount'] }}
+      </button>
+      
+      <button type="button" mat-raised-button color="warn" [routerLink]="['/']">
+       Back
+      </button>
+    </div>
+   </form>  
+  </div>
+ 
+  
+</div>

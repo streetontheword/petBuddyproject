@@ -1,0 +1,55 @@
+<div *ngIf="confirmed" class="appointment-details">
+    <h2>Confirmed Appointment Details</h2>
+    <div class="info-container">
+      <div class="info-item">
+        <label>Inquiry ID:</label>
+        <span>{{ confirmed.inquiryId }}</span>
+      </div>
+      <div class="info-item">
+        <label>User ID:</label>
+        <span>{{ confirmed.userId }}</span>
+      </div>
+      <div class="info-item">
+        <label>Name:</label>
+        <span>{{ confirmed.firstName }} {{ confirmed.lastName }}</span>
+      </div>
+      <div class="info-item">
+        <label>Email:</label>
+        <span>{{ confirmed.email }}</span>
+      </div>
+      <div class="info-item">
+        <label>Birthdate:</label>
+        <span>{{ confirmed.birthdate| date}}</span>
+      </div>
+      <div class="info-item">
+        <label>Nationality:</label>
+        <span>{{ confirmed.nationality }}</span>
+      </div>
+      <div class="info-item">
+        <label>Other Information:</label>
+        <span>{{ confirmed.other }}</span>
+      </div>
+      <div class="info-item">
+        <label>First Time Owner:</label>
+        <span>{{ confirmed.firstTimeOwner }}</span>
+      </div>
+      <div class="info-item">
+        <label>Intended Visit Date:</label>
+        <span>{{ confirmed.intended_visit_date | date }}</span>
+      </div>
+      <div class="info-item">
+        <label>Pet ID:</label>
+        <span>{{ confirmed.petId }}</span>
+      </div>
+      <div class="info-item">
+        <label>Dog Name:</label>
+        <span>{{ confirmed.dogName }}</span>
+      </div>
+    </div>
+    <div class="dog-image-container">
+      <img [src]="confirmed.url" alt="Doggy Pic">
+    </div>
+    <button type="button" class="learn-more-button" mat-dialog-close>Back</button>
+
+  </div>
+  
